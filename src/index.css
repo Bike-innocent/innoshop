@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Apply to entire body */
+body {
+    @apply font-sans; /* Uses the custom DM Sans and Inter from Tailwind */
+  }
+  
+
+
+  .quill-container .ql-container {
+    height: 250px;
+    
+    border: none;
+     font-size: 16.5px;
+     margin: 0;/* Remove Quill's default border */
+ }
+ 
+ .quill-container .ql-toolbar {
+    /* Remove toolbar border */
+    border: none;
+     border-bottom: 1px solid #d1d5db; /* Optional: add a bottom border to the toolbar */
+ }
+
+ 
+.custom-quill-content{
+    font-size: 17px;
+}
+
+.custom-quill-content a {
+    color: #3B82F6; /* Default color for links */
+    text-decoration: underline; /* Default text-decoration for links */
+}

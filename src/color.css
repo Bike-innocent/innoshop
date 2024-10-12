@@ -1,0 +1,480 @@
+/* variables */
+/* :root {
+    --color-black-800: #080808;
+    --color-black-700: rgba(8, 8, 8, 0.8);
+    --color-black-600: rgba(8, 8, 8, 0.6);
+    --color-black-500: rgba(8, 8, 8, 0.04);
+    --color-primary: #FFB646;
+    --color-secondary: #FFE9D9;
+    --color-white: #FFFFFF;
+    --color-orange: #FF9330;
+    --color-gray-300: #d1d5db;
+    --color-success: #05EB05;
+    --color-error: #DC2626;
+} */
+
+
+:root {
+  --color-black-800: #080808;
+  --color-black-700: rgba(8, 8, 8, 0.8);
+  --color-black-600: rgba(8, 8, 8, 0.6);
+  --color-black-500: rgba(8, 8, 8, 0.04);
+  --color-primary: #60A5FA;    /* Lighter blue, analogous to #FFB646 */
+  --color-secondary: #E0F2FE;  /* Softer blue, analogous to #FFE9D9 */
+  --color-white: #FFFFFF;      /* Neutral white, same as original */
+  --color-orange: #3B82F6;       /* Rich idea blue, analogous to #FF9330 */
+  --color-gray-300: #d1d5db;
+  --color-success: #05EB05;
+  --color-error: #DC2626;
+}
+
+/* borders */
+
+
+.border-black-800 {
+    --tw-border-opacity: 1;
+    border-color: var(--color-black-800);
+}
+
+.border-black-text-100 {
+    border-color: rgba(var(--color-black-800), 0.1);
+}
+
+.border-black-text-400 {
+    border-color: rgba(var(--color-black-800), 0.4);
+}
+
+/* .border-border-white {
+    border-color: rgba(var(--color-white), 0.2);
+} */
+
+.border-border-white {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.border-gray-300 {
+    --tw-border-opacity: 1;
+    border-color: var(--color-gray-300);
+}
+
+
+
+
+/* bg colors */
+
+.bg-active {
+    background-color: rgba(var(--color-black-800), 0.95);
+}
+
+.bg-black-500 {
+    background-color: var(--color-black-500);
+}
+
+.bg-black-800 {
+    --tw-bg-opacity: 1;
+    background-color: var(--color-black-800);
+}
+
+.bg-primary {
+    --tw-bg-opacity: 1;
+    background-color: var(--color-primary);
+}
+
+.bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: var(--color-secondary);
+}
+
+.bg-white {
+    --tw-bg-opacity: 1;
+    background-color: var(--color-white);
+}
+
+
+/* text colors */
+
+.text-active {
+    color: rgba(var(--color-black-800), 0.95);
+}
+
+.text-black-700 {
+    color: rgba(var(--color-black-700), 0.8);
+}
+
+.text-black-800 {
+    --tw-text-opacity: 1;
+    color: var(--color-black-800);
+}
+
+.text-black-text-600 {
+    color: var(--color-black-600);
+}
+
+.text-black-text-800 {
+    color: var(--color-black-800);
+}
+
+.text-orange {
+    --tw-text-opacity: 1;
+    color: var(--color-orange);
+}
+
+.text-primary {
+    --tw-text-opacity: 1;
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    --tw-text-opacity: 1;
+    color: var(--color-secondary);
+}
+
+.text-white {
+    --tw-text-opacity: 1;
+    color: var(--color-white);
+}
+
+
+/* button class color */
+
+.btn-primary {
+    background-color: rgba(var(--color-black-800), 0.95);
+    color: var(--color-white);
+
+    
+    border-radius: 0.5rem;
+    border-width: 1px;
+    background-color: rgba(8, 8, 8, 0.95);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 1;
+    --tw-text-opacity: 1;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+
+
+    
+}
+
+.btn-primary:hover {
+    border-color: rgba(var(--color-black-800), 0.4);
+    background-color: transparent;
+    color: var(--color-black-800);
+    
+}
+
+ 
+@media (min-width: 768px) {
+    .btn-primary {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+  }
+
+.btn-primary-outline {
+    border-color: rgba(var(--color-black-800), 0.4);
+    color: var(--color-black-800);
+    
+    border-radius: 0.5rem;
+    border-width: 1px;
+    /* background-color: transparent; */
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 1;
+    --tw-text-opacity: 1;
+  
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+
+.btn-primary-outline:hover {
+    border-color: var(--color-black-800);
+    background-color: var(--color-black-800);
+    color: var(--color-white);
+}
+
+
+@media (min-width: 768px) {
+    .btn-primary-outline {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+  }
+
+
+/* other class colors */
+.tab-btn {
+    background-color: var(--color-white);
+    color: var(--color-black-800);
+
+    border-radius: 0.5rem;
+   
+   
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 1;
+   
+  
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.tab-btn:hover {
+    background-color: var(--color-black-800);
+    color: var(--color-white);
+}
+
+@media (min-width: 992px) {
+    .tab-btn {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+  }
+
+
+.tab-btn.active {
+    background-color: var(--color-black-800);
+    color: var(--color-white);
+}
+
+.success {
+    color: var(--color-success);
+}
+
+.error {
+    color: var(--color-error);
+}
+
+.placeholder\:text-black-text-600::placeholder {
+    color: var(--color-black-600);
+}
+
+.group-hover\:text-orange:hover {
+    color: var(--color-orange);
+}
+
+.group-hover\:stroke-white:hover {
+    stroke: var(--color-white);
+}
+
+
+.paragraph {
+    /* font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: var(--color-black-800);
+
+  }
+  
+
+
+  
+ 
+  
+
+  a {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+  }
+
+
+
+
+
+  
+  /* Now you can reference these variables in your styles */
+  .strock-text {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -1.5px;
+    --tw-text-opacity: 1;
+    color: var(--color-white);
+    text-shadow: 1px 1px 0 rgba(8, 8, 8, 0.4), -1px -1px 0 rgba(8, 8, 8, 0.4), 1px -1px 0 rgba(8, 8, 8, 0.4), -1px 1px 0 rgba(8, 8, 8, 0.4), 1px 1px 0 rgba(8, 8, 8, 0.4);
+  }
+  
+  .featured-properties {
+    background-color: var(--color-black-500);
+  }
+
+  .placeholder\:text-black-text-600::-moz-placeholder {
+    color: rgba(8, 8, 8, 0.6);
+  }
+  
+  .placeholder\:text-black-text-600::placeholder {
+    color: rgba(8, 8, 8, 0.6);
+  }
+  
+  
+  .success {
+    --tw-text-opacity: 1;
+    color: var(--color-success);
+  }
+  
+  .error {
+    --tw-text-opacity: 1;
+    color: var(--color-error);
+  }
+  
+  /* Other classes */
+  .hover\:bg-primary:hover {
+    --tw-bg-opacity: 1;
+    background-color: var(--color-primary);
+  }
+  
+  .hover\:text-orange:hover {
+    --tw-text-opacity: 1;
+    color: var(--color-orange);
+  }
+  
+  /* Continue using the variables for other parts of your CSS */
+  
+
+
+
+
+
+
+
+  .before\:bg-black-300::before {
+    content: var(--tw-content);
+    background-color: var(--color-black-500);
+  }
+  
+  .before\:bg-black-600::before {
+    content: var(--tw-content);
+    background-color: var(--color-black-600);
+  }
+  
+  .before\:bg-black-800::before {
+    content: var(--tw-content);
+    --tw-bg-opacity: 1;
+    background-color: rgba(8 8 8 / var(--tw-bg-opacity));
+  }
+  
+  .before\:bg-orange::before {
+    content: var(--tw-content);
+    --tw-bg-opacity: 1;
+    background-color: var(--color-orange);
+  }
+  
+  .before\:bg-primary::before {
+    content: var(--tw-content);
+    --tw-bg-opacity: 1;
+    background-color: var(--color-primary);
+  }
+  
+  .before\:bg-white::before {
+    content: var(--tw-content);
+    --tw-bg-opacity: 1;
+    background-color: var(--color-white);
+  }
+  
+  .hover\:border-active:hover {
+    border-color: var(--color-black-800);
+  }
+  
+  .hover\:bg-active:hover {
+    background-color: var(--color-black-800);
+  }
+  
+  .hover\:bg-primary:hover {
+    --tw-bg-opacity: 1;
+    background-color: var(--color-primary);
+  }
+  
+  .hover\:bg-white:hover {
+    --tw-bg-opacity: 1;
+    background-color: var(--color-white);
+  }
+  
+  .hover\:text-orange:hover {
+    --tw-text-opacity: 1;
+    color: var(--color-orange);
+  }
+  
+  .hover\:text-primary:hover {
+    --tw-text-opacity: 1;
+    color: var(--color-primary);
+  }
+  
+  .hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: var(--color-white);
+  }
+  
+  .hover\:shadow-2xl:hover {
+    --tw-shadow: 0px 36px 100px 0px rgba(8, 8, 8, 0.15);
+    --tw-shadow-colored: 0px 36px 100px 0px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+      var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+  }
+  
+  .hover\:before\:bg-primary:hover::before {
+    content: var(--tw-content);
+    --tw-bg-opacity: 1;
+    background-color: var(--color-primary);
+  }
+  
+  .hover\:before\:opacity-80:hover::before {
+    content: var(--tw-content);
+    opacity: 0.8;
+  }
+  
+  .focus\:border-black-800:focus {
+    --tw-border-opacity: 1;
+    border-color: var(--color-black-800);
+  }
+  
+  .group:hover .group-hover\:bg-black-500 {
+    background-color: var(--color-black-500);
+  }
+  
+  .group:hover .group-hover\:fill-yellow {
+    fill: #FFE600;
+  }
+  
+  .group:hover .group-hover\:stroke-white {
+    stroke: var(--color-white);
+  }
+  
+  .group:hover .group-hover\:text-orange {
+    --tw-text-opacity: 1;
+    color: var(--color-orange);
+  }
+  
+  @media (min-width: 768px) {
+    .md\:hover\:text-white:hover {
+      --tw-text-opacity: 1;
+      color: var(--color-white);
+    }
+  }
+  
