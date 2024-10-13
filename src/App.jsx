@@ -2,7 +2,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './layouts/Main';
-import Index from './pages/Index.jsx';
+import Index from './pages/home/Index.jsx';
 import Contact from './pages/contact/Contact';
 import About from './pages/about/About';
 import Project from './pages/project/Project.jsx';

@@ -1,24 +1,21 @@
 import React from 'react'
-import Hero from './hero/Hero'
-import Service from './service/Service'
-import About from './about/About'
-import Tab from './tabs/Tab'
-import Portfolio from './portfolio/Portfolio'
-import Blog from './blog/Blog'
 import Title from '../../components/Title';
+import Slider from './Slider/Slider';
+import Collection from './collection/Collection';
+import BestSeller from './best-seller/BestSeller';
+import Store from './store/Store';
+import Brand from './brand/Brand';
 
 function Index() {
   return (
     <>
     <Title title="Chibuike Innocent - Web Developer" /> 
-      <Hero/>
-      <Service/>
-      <About/>
-      <Tab/>
-      <Portfolio/>
-      {/* <Testimonial/> */}
-      <Blog/>
-      {/* <Pricing/> */}
+    <Slider/>
+    <Collection/>
+    <BestSeller/>
+    <Store/>
+    <Brand/>
+      
     </>
   )
 }

@@ -1,9 +1,13 @@
 
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import HeaderIndex from '../components/header/HeaderIndex';
 import Footer from '../components/footer/Footer';
 import ToolBar from '../components/tool-bar/ToolBar';
+import Header from '../components/header/Header';
+import OffCanvas from '../components/header/OffCanvas';
+import AuthModal from '../components/header/AuthModal';
+import ShoppingCart from '../components/header/ShoppingCart';
+import CanvasSearch from '../components/header/CanvasSearch';
 
 function Main() {
 
@@ -11,7 +15,11 @@ function Main() {
     return (
         <main className="overflow-x-hidden">
             <div id="wrapper">
-                <HeaderIndex />
+                <Header />
+                <AuthModal/>
+                <ShoppingCart/>
+                <CanvasSearch/>
+                <OffCanvas/>
                 <Outlet />
                 <Footer />
             </div>
