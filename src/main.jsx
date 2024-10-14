@@ -1,18 +1,30 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { NextUIProvider } from "@nextui-org/react";
-
+import 'aos/dist/aos.css';
 import App from "./App";
 import "./index.css";
 
 // Import CSS for AOS and Swiper
-import 'aos/dist/aos.css';
 
-// import './swiper/swiper-bundle.min.css';
- import './style.css';
- import './color.css';
-import './plugins/swiper-bundle.min.css';
-import './plugins/magnific-popup.css';
+import './css/swiper-bundle.min.css';
+
+
+
+import './css/styles.css';
+import './css/animate.css';
+import './css/bootstrap-select.min.css';
+ //import './css/bootstrap.min.css';
+import './css/drift-basic.min.css';
+import './css/image-compare-viewer.min.css';
+import './css/photoswipe.css';
+
+
+import './js/carousel'
+
+
+
+
 
 // Import AOS
 import AOS from 'aos';

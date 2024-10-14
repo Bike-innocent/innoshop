@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* Apply to entire body */
+/* 
 body {
-    @apply font-sans; /* Uses the custom DM Sans and Inter from Tailwind */
+    @apply font-sans; 
   }
   
 
@@ -15,13 +14,13 @@ body {
     
     border: none;
      font-size: 16.5px;
-     margin: 0;/* Remove Quill's default border */
+     margin: 0;
  }
  
  .quill-container .ql-toolbar {
-    /* Remove toolbar border */
+    
     border: none;
-     border-bottom: 1px solid #d1d5db; /* Optional: add a bottom border to the toolbar */
+     border-bottom: 1px solid #d1d5db;
  }
 
  
@@ -30,6 +29,16 @@ body {
 }
 
 .custom-quill-content a {
-    color: #3B82F6; /* Default color for links */
-    text-decoration: underline; /* Default text-decoration for links */
+    color: #3B82F6;
+    text-decoration: underline; 
+} */
+
+
+/* Tailwind CSS custom class to hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
