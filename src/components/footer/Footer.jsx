@@ -1,4 +1,5 @@
 import React from 'react'
+import FooterNav from './mini-component/FooterNav'
 
 
 
@@ -40,101 +41,17 @@ function Footer() {
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6 col-12 footer-col-block">
-                                <div class="footer-heading footer-heading-desktop">
-                                    <h6>Help</h6>
-                                </div>
-                                <div class="footer-heading footer-heading-moblie">
-                                    <h6>Help</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content">
-                                    <li>
-                                        <a href="privacy-policy.html" class="footer-menu_item">Privacy Policy</a>
-                                    </li>
-                                    <li> 
-                                        <a href="delivery-return.html" class="footer-menu_item">  Returns + Exchanges </a>
-                                    </li>
-                                    <li> 
-                                        <a href="shipping-delivery.html" class="footer-menu_item">Shipping</a>
-                                    </li>
-                                    <li> 
-                                        <a href="terms-conditions.html" class="footer-menu_item">Terms &amp; Conditions</a>
-                                    </li>
-                                    <li> 
-                                        <a href="faq-1.html" class="footer-menu_item">FAQ’s</a>
-                                    </li>
-                                    <li> 
-                                        <a href="compare.html" class="footer-menu_item">Compare</a>
-                                    </li>
-                                    <li> 
-                                        <a href="wishlist.html" class="footer-menu_item">My Wishlist</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-xl-3 col-md-6 col-12 footer-col-block">
-                                <div class="footer-heading footer-heading-desktop">
-                                    <h6>About us</h6>
-                                </div>
-                                <div class="footer-heading footer-heading-moblie">
-                                    <h6>About us</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content">
-                                    <li>
-                                        <a href="about-us.html" class="footer-menu_item">Our Story</a>
-                                    </li>
-                                    <li> 
-                                        <a href="our-store.html" class="footer-menu_item">Visit Our Store</a>
-                                    </li>
-                                    <li> 
-                                        <a href="contact-1.html" class="footer-menu_item">Contact Us</a>
-                                    </li>
-                                    <li> 
-                                        <a href="login.html" class="footer-menu_item">Account</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-xl-3 col-md-6 col-12">
-                                <div class="footer-newsletter footer-col-block">
-                                    <div class="footer-heading footer-heading-desktop">
-                                        <h6>Sign Up for Email </h6>
-                                    </div>
-                                    <div class="footer-heading footer-heading-moblie">
-                                        <h6>Sign Up for Email </h6>
-                                    </div>
-                                    <div class="tf-collapse-content">
-                                        <div class="footer-menu_item">Sign up to get first dibs on new arrivals, sales, exclusive content, events and more!</div>
-                                        <form class="form-newsletter" id="subscribe-form" action="#" method="post" accept-charset="utf-8" data-mailchimp="true">
-                                            <div id="subscribe-content">
-                                                <fieldset class="email">
-                                                    <input type="email" name="email-form" id="subscribe-email" placeholder="Enter your email...." tabindex="0" aria-required="true"/>
-                                                </fieldset>
-                                                <div class="button-submit">
-                                                    <button id="subscribe-button" class="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn" type="button">Subscribe<i class="icon icon-arrow1-top-left"></i></button>
-                                                </div>
-                                            </div>
-                                            <div id="subscribe-msg"></div>
-                                        </form>
-                                        <div class="tf-cur">
-                                            <div class="tf-currencies">
-                                                <select class="image-select center style-default type-currencies">
-                                                    <option data-thumbnail="images/country/fr.svg">EUR <span>€ | France</span></option>
-                                                    <option data-thumbnail="images/country/de.svg">EUR <span>€ | Germany</span></option>
-                                                    <option selected data-thumbnail="images/country/us.svg">USD <span>$ | United States</span></option>
-                                                    <option data-thumbnail="images/country/vn.svg">VND <span>₫ | Vietnam</span></option>
-                                                </select>
-                                            </div>
-                                            <div class="tf-languages">
-                                                <select class="image-select center style-default type-languages">
-                                                    <option>English</option>
-                                                    <option>العربية</option>
-                                                    <option>简体中文</option>
-                                                    <option>اردو</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+
+
+                           <FooterNav/>
+
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>

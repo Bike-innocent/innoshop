@@ -4,23 +4,28 @@ import { NextUIProvider } from "@nextui-org/react";
 import 'aos/dist/aos.css';
 import App from "./App";
 import "./index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 // Import CSS for AOS and Swiper
 
-import './css/swiper-bundle.min.css';
+// import './css/swiper-bundle.min.css';
 
 
 
 import './css/styles.css';
 import './css/animate.css';
 import './css/bootstrap-select.min.css';
- //import './css/bootstrap.min.css';
+//  import './css/bootstrap.min.css';
 import './css/drift-basic.min.css';
 import './css/image-compare-viewer.min.css';
 import './css/photoswipe.css';
+import './css/swiper-bundle.css';
+import './js/swiper-bundle';
 
 
-import './js/carousel'
+
 
 
 
