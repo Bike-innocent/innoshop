@@ -628,9 +628,10 @@
 
 
 import React, { useState, useEffect } from 'react';
+
 import Filter from './mini-component/Filter';
-import Featured from './mini-component/Featured';
 import Pagination from './mini-component/Pagination';
+import CustomSelect from './mini-component/CustomSelect';
 
 function Shop() {
     // State to manage the grid layout
@@ -699,7 +700,8 @@ function Shop() {
                             </li>
                         </ul>
 
-                        <Featured />
+                        <CustomSelect/>
+
                     </div>
 
                     {/* Product Grid */}

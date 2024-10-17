@@ -41,17 +41,7 @@ function Footer() {
                                     </ul>
                                 </div>
                             </div>
-
-
-
                            <FooterNav/>
-
-
-
-
-
-
-
                         </div>
                     </div>
                 </div>

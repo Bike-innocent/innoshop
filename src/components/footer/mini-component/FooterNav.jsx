@@ -40,7 +40,7 @@ function FooterNav() {
         <div className="footer-heading flex justify-between items-center cursor-pointer" onClick={toggleAboutUs}>
           <h6>About Us</h6>
           <span className="md:hidden">
-            {isAboutUsOpen ? <FaMinus /> : <FaPlus className="text-gray-700" />}
+            {isAboutUsOpen ? <FaMinus className="text-gray-700" /> : <FaPlus className="text-gray-700" />}
           </span>
         </div>
         <ul
@@ -91,24 +91,7 @@ function FooterNav() {
             </div>
           </form>
 
-          {/* Currency and Language Selectors */}
-          <div className="tf-cur mt-4">
-            <div className="tf-currencies mb-2">
-              <select className="image-select center style-default type-currencies">
-                <option>EUR | France</option>
-                <option>USD | United States</option>
-                <option>VND | Vietnam</option>
-              </select>
-            </div>
-            <div className="tf-languages">
-              <select className="image-select center style-default type-languages">
-                <option>English</option>
-                <option>لعربية</option>
-                <option>简体中文</option>
-                <option>اردو</option>
-              </select>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

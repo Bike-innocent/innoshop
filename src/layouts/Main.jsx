@@ -14,16 +14,19 @@ function Main() {
 
     return (
         <main className="overflow-x-hidden">
-            <div id="wrapper">
-                <Header />
-                <AuthModal/>
-                <ShoppingCart/>
-                <CanvasSearch/>
-                <OffCanvas/>
+
+            <Header />
+            <div className='mt-20'>
+                <AuthModal />
+                <ShoppingCart />
+                <CanvasSearch />
+                <OffCanvas />
                 <Outlet />
                 <Footer />
             </div>
-            <ToolBar/>
+
+
+            <ToolBar />
 
 
         </main>
