@@ -538,7 +538,7 @@
 //                                 </ul>
 //                             </div>
 //                         </div>
-                       
+
 //                         {/* <!-- card product 3 --> */}
 //                         <div class="card-product">
 //                             <div class="card-product-wrapper">
@@ -581,7 +581,7 @@
 //                                         <span class="swatch-value bg_dark"></span>
 //                                         <img class="lazyload" data-src="assets/images/products/black-3.jpg" src="assets/images/products/black-3.jpg" alt="image-product" />
 //                                     </li>
-                                   
+
 //                                     <li class="list-color-item color-swatch">
 //                                         <span class="tooltip">Light Grey</span>
 //                                         <span class="swatch-value bg_light-grey"></span>
@@ -632,6 +632,10 @@ import React, { useState, useEffect } from 'react';
 import Filter from './mini-component/Filter';
 import Pagination from './mini-component/Pagination';
 import CustomSelect from './mini-component/CustomSelect';
+import QuickAdd from './mini-component/QuickAdd';
+import QuickView from './mini-component/QuickView';
+import Compare from './mini-component/Compare';
+import FindSize from './mini-component/FindSize';
 
 function Shop() {
     // State to manage the grid layout
@@ -700,7 +704,7 @@ function Shop() {
                             </li>
                         </ul>
 
-                        <CustomSelect/>
+                        <CustomSelect />
 
                     </div>
 
@@ -748,7 +752,7 @@ function Shop() {
 
 
 
-                             <div className={`card-product ${gridLayout} p-2`}>
+                            <div className={`card-product ${gridLayout} p-2`}>
                                 <div className="card-product-wrapper">
                                     <a href="product-detail.html" className="product-img">
                                         <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
@@ -813,7 +817,7 @@ function Shop() {
                                 </div>
                             </div>
 
-                             <div className={`card-product ${gridLayout} p-2`}>
+                            <div className={`card-product ${gridLayout} p-2`}>
                                 <div className="card-product-wrapper">
                                     <a href="product-detail.html" className="product-img">
                                         <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
@@ -846,7 +850,7 @@ function Shop() {
                                 </div>
                             </div>
 
-                             <div className={`card-product ${gridLayout} p-2`}>
+                            <div className={`card-product ${gridLayout} p-2`}>
                                 <div className="card-product-wrapper">
                                     <a href="product-detail.html" className="product-img">
                                         <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
@@ -879,7 +883,7 @@ function Shop() {
                                 </div>
                             </div>
 
-                             <div className={`card-product ${gridLayout} p-2`}>
+                            <div className={`card-product ${gridLayout} p-2`}>
                                 <div className="card-product-wrapper">
                                     <a href="product-detail.html" className="product-img">
                                         <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
@@ -912,38 +916,38 @@ function Shop() {
                                 </div>
                             </div>
 
-<div className={`card-product ${gridLayout} p-2`}>
-<div className="card-product-wrapper">
-    <a href="product-detail.html" className="product-img">
-        <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
-        <img className="lazyload img-hover" data-src="assets/images/products/white-1.jpg" src="assets/images/products/white-1.jpg" alt="image-product" />
-    </a>
-    <div className="list-product-btn">
-        <a href="#quick_add" data-bs-toggle="modal" className="box-icon bg_white quick-add tf-btn-loading">
-            <span className="icon icon-bag"></span>
-            <span className="tooltip">Quick Add</span>
-        </a>
-        <a href="javascript:void(0);" className="box-icon bg_white wishlist btn-icon-action">
-            <span className="icon icon-heart"></span>
-            <span className="tooltip">Add to Wishlist</span>
-            <span className="icon icon-delete"></span>
-        </a>
-        <a href="#compare" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" className="box-icon bg_white compare btn-icon-action">
-            <span className="icon icon-compare"></span>
-            <span className="tooltip">Add to Compare</span>
-            <span className="icon icon-check"></span>
-        </a>
-        <a href="#quick_view" data-bs-toggle="modal" className="box-icon bg_white quickview tf-btn-loading">
-            <span className="icon icon-view"></span>
-            <span className="tooltip">Quick View</span>
-        </a>
-    </div>
-</div>
-<div className="card-product-info">
-    <a href="product-detail.html" className="title link">Ribbed Tank Top</a>
-    <span className="price">$16.95</span>
-</div>
-</div>
+                            <div className={`card-product ${gridLayout} p-2`}>
+                                <div className="card-product-wrapper">
+                                    <a href="product-detail.html" className="product-img">
+                                        <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
+                                        <img className="lazyload img-hover" data-src="assets/images/products/white-1.jpg" src="assets/images/products/white-1.jpg" alt="image-product" />
+                                    </a>
+                                    <div className="list-product-btn">
+                                        <a href="#quick_add" data-bs-toggle="modal" className="box-icon bg_white quick-add tf-btn-loading">
+                                            <span className="icon icon-bag"></span>
+                                            <span className="tooltip">Quick Add</span>
+                                        </a>
+                                        <a href="javascript:void(0);" className="box-icon bg_white wishlist btn-icon-action">
+                                            <span className="icon icon-heart"></span>
+                                            <span className="tooltip">Add to Wishlist</span>
+                                            <span className="icon icon-delete"></span>
+                                        </a>
+                                        <a href="#compare" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" className="box-icon bg_white compare btn-icon-action">
+                                            <span className="icon icon-compare"></span>
+                                            <span className="tooltip">Add to Compare</span>
+                                            <span className="icon icon-check"></span>
+                                        </a>
+                                        <a href="#quick_view" data-bs-toggle="modal" className="box-icon bg_white quickview tf-btn-loading">
+                                            <span className="icon icon-view"></span>
+                                            <span className="tooltip">Quick View</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="card-product-info">
+                                    <a href="product-detail.html" className="title link">Ribbed Tank Top</a>
+                                    <span className="price">$16.95</span>
+                                </div>
+                            </div>
                             {/* Additional product cards here */}
                         </div>
                     </div>
@@ -953,6 +957,10 @@ function Shop() {
             </section>
 
             <Filter />
+            <QuickAdd/>
+            <QuickView/>
+            <Compare/>
+         
         </>
     );
 }

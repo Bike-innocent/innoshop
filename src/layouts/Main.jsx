@@ -16,7 +16,7 @@ function Main() {
         <main className="overflow-x-hidden">
 
             <Header />
-            <div className='mt-20'>
+            <div className='mt-[50px]'>
                 <AuthModal />
                 <ShoppingCart />
                 <CanvasSearch />
