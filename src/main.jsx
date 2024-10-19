@@ -17,7 +17,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './css/styles.css';
 import './css/animate.css';
 import './css/bootstrap-select.min.css';
-//  import './css/bootstrap.min.css';
+// import './css/bootstrap.min.css';
 import './css/drift-basic.min.css';
 import './css/image-compare-viewer.min.css';
 import './css/photoswipe.css';

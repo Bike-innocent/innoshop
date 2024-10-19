@@ -5,17 +5,23 @@ import Collection from './collection/Collection';
 import BestSeller from './best-seller/BestSeller';
 import Store from './store/Store';
 import Brand from './brand/Brand';
+import QuickAdd from './mini-component/QuickAdd';
+import QuickView from './mini-component/QuickView';
+import Compare from './mini-component/Compare';
 
 function Index() {
   return (
     <>
-    <Title title="Chibuike Innocent - Web Developer" /> 
-    <Slider/>
-    <Collection/>
-    <BestSeller/>
-    <Store/>
-    <Brand/>
-      
+      <Title title="Chibuike Innocent - Web Developer" />
+      <Slider />
+      <Collection />
+      <BestSeller />
+      <Store />
+      <Brand />
+      <QuickAdd/>
+      <QuickView />
+      <Compare />
+
     </>
   )
 }
