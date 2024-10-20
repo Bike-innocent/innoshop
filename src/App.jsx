@@ -7,7 +7,10 @@ import Login from './pages/Login.jsx';
 import NotFound from './pages/NotFound.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Shop from './pages/shop/Shop.jsx';
+
 import ProductDetials from './pages/product-details/ProductDetials.jsx';
+import AboutUs from './pages/about/AboutUs.jsx';
+import ContactUs from './pages/contact/ContactUs.jsx';
 
 
 // Define the router
@@ -22,6 +25,8 @@ const router = createBrowserRouter([
       { path: '/not-found', element: <NotFound /> },
       { path: '*', element: <NotFound /> },
       { path: '/shop', element: < Shop/> },
+      { path: '/about-us', element: < AboutUs/> },
+      { path: '/contact-us', element: < ContactUs/> },
 
       { path: '/product-details', element: < ProductDetials/> },
        

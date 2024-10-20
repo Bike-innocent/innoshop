@@ -22,7 +22,7 @@ import './css/drift-basic.min.css';
 import './css/image-compare-viewer.min.css';
 import './css/photoswipe.css';
 import './css/swiper-bundle.css';
-import './js/swiper-bundle';
+
 
 
 

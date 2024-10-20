@@ -117,8 +117,9 @@ function Header() {
             </a>
           </div>
           <div className="col-xl-3 col-md-4 col-6">
-            <a href="index.html" className="logo-header">
-              <img src="assets/images/logo/logo.svg" alt="logo" className="logo" />
+            <a href="index.html" className="logo-header text-3xl font-bold">
+              {/* <img src="assets/images/logo/logo.svg" alt="logo" className="logo" /> */}
+                Innoshop
             </a>
           </div>
           <div className="col-lg-4 col-xl-6 tf-md-hidden">
