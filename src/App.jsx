@@ -11,6 +11,10 @@ import Shop from './pages/shop/Shop.jsx';
 import ProductDetials from './pages/product-details/ProductDetials.jsx';
 import AboutUs from './pages/about/AboutUs.jsx';
 import ContactUs from './pages/contact/ContactUs.jsx';
+import CheckOut from './pages/check-out/CheckOut.jsx';
+import ViewCart from './pages/view-cart/ViewCart.jsx';
+import OurStore from './pages/our-store/OurStore.jsx';
+import Faq from './pages/faq/Faq.jsx';
 
 
 // Define the router
@@ -27,6 +31,10 @@ const router = createBrowserRouter([
       { path: '/shop', element: < Shop/> },
       { path: '/about-us', element: < AboutUs/> },
       { path: '/contact-us', element: < ContactUs/> },
+      { path: '/check-out', element: < CheckOut/> },
+      { path: '/view-cart', element: < ViewCart/> },
+      { path: '/our-store', element: < OurStore/> },
+      { path: '/faq', element: < Faq/> },
 
       { path: '/product-details', element: < ProductDetials/> },
        
