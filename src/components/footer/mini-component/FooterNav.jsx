@@ -28,8 +28,8 @@ function FooterNav() {
         >
           <li><Link to="/privacy-policy" className="footer-menu_item">Privacy Policy</Link></li>
           <li><Link to="/delivery-return" className="footer-menu_item">Returns + Exchanges</Link></li>
-          <li><Link to="/shipping-delivery" className="footer-menu_item">Shipping</Link></li>
-          <li><Link to="/terms-conditions" className="footer-menu_item">Terms & Conditions</Link></li>
+        
+          <li><Link to="/terms-and-condition" className="footer-menu_item">Terms & Conditions</Link></li>
           <li><Link to="/faq" className="footer-menu_item">FAQ’s</Link></li>
           <li><Link to="/compare" className="footer-menu_item">Compare</Link></li>
           <li><Link to="/wishlist" className="footer-menu_item">My Wishlist</Link></li>

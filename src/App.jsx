@@ -3,7 +3,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './layouts/Main';
 import Index from './pages/home/Index.jsx';
-import Login from './pages/Login.jsx';
+import Login from './pages/Auth/Login.jsx';
 import NotFound from './pages/NotFound.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Shop from './pages/shop/Shop.jsx';
@@ -15,6 +15,12 @@ import CheckOut from './pages/check-out/CheckOut.jsx';
 import ViewCart from './pages/view-cart/ViewCart.jsx';
 import OurStore from './pages/our-store/OurStore.jsx';
 import Faq from './pages/faq/Faq.jsx';
+import Compare from './pages/compare/Compare.jsx';
+import Wishlist from './pages/wishlist/Wishlist.jsx';
+import DeliveryAndReturns from './pages/DeliveryAndReturns.jsx';
+import TermsAndCondition from './pages/TermsAndCondition.jsx';
+import PrivacyAndPolicy from './pages/PrivacyAndPolicy.jsx';
+import Register from './pages/Auth/Register.jsx';
 
 
 // Define the router
@@ -26,6 +32,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Index /> },
    
       { path: '/login', element: <Login /> },
+      { path: '/register', element: <Register /> },
       { path: '/not-found', element: <NotFound /> },
       { path: '*', element: <NotFound /> },
       { path: '/shop', element: < Shop/> },
@@ -35,6 +42,13 @@ const router = createBrowserRouter([
       { path: '/view-cart', element: < ViewCart/> },
       { path: '/our-store', element: < OurStore/> },
       { path: '/faq', element: < Faq/> },
+      { path: '/compare', element: < Compare/> },
+      { path: '/wishlist', element: < Wishlist/> },
+      { path: '/privacy-policy', element: < PrivacyAndPolicy/> },
+      { path: '/terms-and-condition', element: < TermsAndCondition/> },
+      { path: '/delivery-return', element: < DeliveryAndReturns/> },
+      
+
 
       { path: '/product-details', element: < ProductDetials/> },
        
