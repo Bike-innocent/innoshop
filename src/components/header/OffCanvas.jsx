@@ -85,7 +85,7 @@
 
 
 import React, { useRef, useEffect } from 'react';
-import { , useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Offcanvas } from 'bootstrap'; // Import Bootstrap JS API
 
 function OffCanvas() {

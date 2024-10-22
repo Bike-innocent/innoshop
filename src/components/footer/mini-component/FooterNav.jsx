@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa'; // Import icons from react-icons
+import { Link } from 'react-router-dom';
 
 function FooterNav() {
   // State to handle collapsing for each section
@@ -25,13 +26,13 @@ function FooterNav() {
         <ul
           className={`footer-menu-list transition-all duration-300 ${isHelpOpen ? 'block' : 'hidden'} md:block`}
         >
-          <li><a href="privacy-policy.html" className="footer-menu_item">Privacy Policy</a></li>
-          <li><a href="delivery-return.html" className="footer-menu_item">Returns + Exchanges</a></li>
-          <li><a href="shipping-delivery.html" className="footer-menu_item">Shipping</a></li>
-          <li><a href="terms-conditions.html" className="footer-menu_item">Terms & Conditions</a></li>
-          <li><a href="faq-1.html" className="footer-menu_item">FAQ’s</a></li>
-          <li><a href="compare.html" className="footer-menu_item">Compare</a></li>
-          <li><a href="wishlist.html" className="footer-menu_item">My Wishlist</a></li>
+          <li><Link to="/privacy-policy" className="footer-menu_item">Privacy Policy</Link></li>
+          <li><Link to="/delivery-return" className="footer-menu_item">Returns + Exchanges</Link></li>
+          <li><Link to="/shipping-delivery" className="footer-menu_item">Shipping</Link></li>
+          <li><Link to="/terms-conditions" className="footer-menu_item">Terms & Conditions</Link></li>
+          <li><Link to="/faq" className="footer-menu_item">FAQ’s</Link></li>
+          <li><Link to="/compare" className="footer-menu_item">Compare</Link></li>
+          <li><Link to="/wishlist" className="footer-menu_item">My Wishlist</Link></li>
         </ul>
       </div>
 
@@ -46,10 +47,10 @@ function FooterNav() {
         <ul
           className={`footer-menu-list transition-all duration-300 ${isAboutUsOpen ? 'block' : 'hidden'} md:block`}
         >
-          <li><a href="about-us.html" className="footer-menu_item">Our Story</a></li>
-          <li><a href="our-store.html" className="footer-menu_item">Visit Our Store</a></li>
-          <li><a href="contact-1.html" className="footer-menu_item">Contact Us</a></li>
-          <li><a href="login.html" className="footer-menu_item">Account</a></li>
+          <li><Link to="/about-us" className="footer-menu_item">Our Story</Link></li>
+          <li><Link to="/our-store" className="footer-menu_item">Visit Our Store</Link></li>
+          <li><Link to="/contact-us" className="footer-menu_item">Contact Us</Link></li>
+          <li><Link to="/login" className="footer-menu_item">Account</Link></li>
         </ul>
       </div>
 

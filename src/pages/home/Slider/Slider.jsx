@@ -3,6 +3,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { Link } from 'react-router-dom';
 
 
 function Slider() {
@@ -53,13 +54,13 @@ function Slider() {
                     <p className="fade-item fade-item-2">
                       Discover the hottest trends and must-have looks
                     </p>
-                    <a
-                      href="shop-default.html"
+                    <Link
+                      to="/shop"
                       className="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-3"
                     >
                       <span>Shop collection</span>
                       <i className="icon icon-arrow-right"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -80,13 +81,13 @@ function Slider() {
                     <p className="fade-item fade-item-2">
                       Discover the hottest trends and must-have looks
                     </p>
-                    <a
-                      href="shop-default.html"
+                    <Link
+                      to="/shop"
                       className="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-3"
                     >
                       <span>Shop collection</span>
                       <i className="icon icon-arrow-right"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

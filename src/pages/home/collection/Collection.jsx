@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 function Collection() {
   return (
@@ -9,41 +11,41 @@ function Collection() {
                 <div class="masonry-layout">
                     <div class="item-1 collection-item large hover-img wow fadeInUp" data-wow-delay="0s">
                         <div class="collection-inner">
-                            <a href="shop-women.html" class="collection-image img-style rounded-0">
+                            <Link to="/shop" class="collection-image img-style rounded-0">
                                 <img class="lazyload" data-src="assets/images/collections/collection-21.jpg" src="assets/images/collections/collection-21.jpg" alt="collection-img"/>
-                            </a>
+                            </Link>
                             <div class="collection-content">
-                                <a href="shop-women.html" class="tf-btn collection-title hover-icon"><span>Women</span><i class="icon icon-arrow1-top-left"></i></a>
+                               <Link to="/shop" class="tf-btn collection-title hover-icon"><span>Women</span><i class="icon icon-arrow1-top-left"></i> </Link>
                             </div>
                         </div>
                     </div>
                     <div class="item-2 collection-item large hover-img wow fadeInUp" data-wow-delay=".1s">
                         <div class="collection-inner">
-                            <a href="shop-default.html" class="collection-image img-style rounded-0">
+                           <Link to="/shop" class="collection-image img-style rounded-0">
                                 <img class="lazyload" data-src="assets/images/collections/collection-22.jpg" src="assets/images/collections/collection-22.jpg" alt="collection-img"/>
-                            </a>
+                           </Link>
                             <div class="collection-content">
-                                <a href="shop-default.html" class="tf-btn collection-title hover-icon"><span>Handbag</span><i class="icon icon-arrow1-top-left"></i></a>
+                               <Link to="/shop" class="tf-btn collection-title hover-icon"><span>Handbag</span><i class="icon icon-arrow1-top-left"></i> </Link>
                             </div>
                         </div>
                     </div>
                     <div class="item-3 collection-item large hover-img wow fadeInUp" data-wow-delay=".2s">
                         <div class="collection-inner">
-                            <a href="shop-default.html" class="collection-image img-style rounded-0">
+                           <Link to="/shop" class="collection-image img-style rounded-0">
                                 <img class="lazyload" data-src="assets/images/collections/collection-23.jpg" src="assets/images/collections/collection-23.jpg" alt="collection-img"/>
-                            </a>
+                           </Link>
                             <div class="collection-content">
-                                <a href="shop-default.html" class="tf-btn collection-title hover-icon"><span>Accessories</span><i class="icon icon-arrow1-top-left"></i></a>
+                               <Link to="/shop" class="tf-btn collection-title hover-icon"><span>Accessories</span><i class="icon icon-arrow1-top-left"></i> </Link>
                             </div>
                         </div>
                     </div>
                     <div class="item-4 collection-item large hover-img wow fadeInUp" data-wow-delay="0s">
                         <div class="collection-inner">
-                            <a href="shop-men.html" class="collection-image img-style rounded-0">
+                           <Link to="/shop" class="collection-image img-style rounded-0">
                                 <img class="lazyload" data-src="assets/images/collections/collection-24.jpg" src="assets/images/collections/collection-24.jpg" alt="collection-img"/>
-                            </a>
+                           </Link>
                             <div class="collection-content">
-                                <a href="shop-men.html" class="tf-btn collection-title hover-icon"><span>Men</span><i class="icon icon-arrow1-top-left"></i></a>
+                               <Link to="/shop" class="tf-btn collection-title hover-icon"><span>Men</span><i class="icon icon-arrow1-top-left"></i> </Link>
                             </div>
                         </div>
                     </div>
@@ -63,7 +65,7 @@ function Collection() {
                         <span class="sub-heading text-uppercase fw-7">SPRING SALE 30% OFF</span>
                         <div class="heading">Effortless <br/> Denim Delights</div>
                         <p class="description">Discover the versatility of denim with our collection of jeans, jackets</p>
-                        <a href="shop-collection-list.html" class="tf-btn style-2 btn-fill radius-3 animate-hover-btn">Shop collection</a>
+                       <Link to="/shop" class="tf-btn style-2 btn-fill radius-3 animate-hover-btn">Shop collection</Link>
                     </div>
                 </div>
             </div>
