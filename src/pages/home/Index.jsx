@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {  useEffect } from 'react';
 import Title from '../../components/Title';
 import Slider from './Slider/Slider';
 import Collection from './collection/Collection';
@@ -10,6 +10,9 @@ import QuickView from './mini-component/QuickView';
 import Compare from './mini-component/Compare';
 
 function Index() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, []);
   return (
     <>
       <Title title="Chibuike Innocent - Web Developer" />

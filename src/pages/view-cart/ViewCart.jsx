@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {  useEffect } from 'react';
 
 function ViewCart() {
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page
+      }, []);
   return (
     <>
         

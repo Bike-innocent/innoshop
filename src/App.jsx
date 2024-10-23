@@ -21,6 +21,7 @@ import DeliveryAndReturns from './pages/DeliveryAndReturns.jsx';
 import TermsAndCondition from './pages/TermsAndCondition.jsx';
 import PrivacyAndPolicy from './pages/PrivacyAndPolicy.jsx';
 import Register from './pages/Auth/Register.jsx';
+import Account from './pages/account/Account.jsx';
 
 
 // Define the router
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
       { path: '/not-found', element: <NotFound /> },
       { path: '*', element: <NotFound /> },
       { path: '/shop', element: < Shop/> },
+      { path: '/account', element: < Account/> },
       { path: '/about-us', element: < AboutUs/> },
       { path: '/contact-us', element: < ContactUs/> },
       { path: '/check-out', element: < CheckOut/> },
@@ -47,7 +49,17 @@ const router = createBrowserRouter([
       { path: '/privacy-policy', element: < PrivacyAndPolicy/> },
       { path: '/terms-and-condition', element: < TermsAndCondition/> },
       { path: '/delivery-return', element: < DeliveryAndReturns/> },
+     
       
+
+
+
+
+
+
+
+
+
 
 
       { path: '/product-details', element: < ProductDetials/> },
@@ -65,7 +77,7 @@ function App() {
     return (
       <QueryClientProvider client={queryClient}>
             <RouterProvider router={router} />
-            </QueryClientProvider>
+       </QueryClientProvider>
         
     );
 }
