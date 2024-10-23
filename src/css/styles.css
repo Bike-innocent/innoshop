@@ -16193,7 +16193,7 @@ blockquote .text {
   }
   .btn-sidebar-style2,
   .btn-sidebar-mobile {
-    display: block;
+    display: block ;
   }
   .tf-toolbar-bottom.type-1150 {
     display: flex;
@@ -16513,6 +16513,7 @@ blockquote .text {
   .slider-sock .tf-slideshow .wrap-pagination {
     bottom: 20px;
   }
+  
 }
 @media only screen and (max-width: 1024px) {
   .tf-slideshow.about-us-page .text {

@@ -22,6 +22,7 @@ import TermsAndCondition from './pages/TermsAndCondition.jsx';
 import PrivacyAndPolicy from './pages/PrivacyAndPolicy.jsx';
 import Register from './pages/Auth/Register.jsx';
 import Account from './pages/account/Account.jsx';
+import Orders from './pages/account/Orders.jsx';
 
 
 // Define the router
@@ -46,22 +47,10 @@ const router = createBrowserRouter([
       { path: '/faq', element: < Faq/> },
       { path: '/compare', element: < Compare/> },
       { path: '/wishlist', element: < Wishlist/> },
+      { path: '/orders', element: < Orders/> },
       { path: '/privacy-policy', element: < PrivacyAndPolicy/> },
       { path: '/terms-and-condition', element: < TermsAndCondition/> },
       { path: '/delivery-return', element: < DeliveryAndReturns/> },
-     
-      
-
-
-
-
-
-
-
-
-
-
-
       { path: '/product-details', element: < ProductDetials/> },
        
       
