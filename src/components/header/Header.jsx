@@ -104,10 +104,10 @@ function Header() {
                 </a>
               </li>
               <li className="nav-wishlist">
-                <a href="wishlist.html" className="nav-icon-item">
+                <Link to="/wishlist" className="nav-icon-item">
                   <i className="icon icon-heart"></i>
                   <span className="count-box">0</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-cart">
                 <a href="#shoppingCart" data-bs-toggle="modal" className="nav-icon-item">

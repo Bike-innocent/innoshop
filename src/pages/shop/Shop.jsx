@@ -1,4 +1,4 @@
-                                   <span class="icon icon-heart"></span>
+                                   
 import React, { useState, useEffect } from 'react';
 
 import Filter from './mini-component/Filter';
@@ -14,7 +14,7 @@ function Shop() {
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to the top of the page
       }, []);
-      
+
     // State to manage the grid layout
     const [gridLayout, setGridLayout] = useState('w-1/2'); // Default to 2 columns (50% width per item)
 
@@ -132,7 +132,7 @@ function Shop() {
                             <div className={`card-product ${gridLayout} p-2`}>
                                 <div className="card-product-wrapper">
                                     <Link to="/product-details" className="product-img">
-                                        <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
+                                        <img className="lazyload img-product" data-src="assets/images/products/dark-blue.jpg" src="assets/images/products/dark-blue.jpg" alt="image-product" />
                                         <img className="lazyload img-hover" data-src="assets/images/products/white-1.jpg" src="assets/images/products/white-1.jpg" alt="image-product" />
                                     </Link>
                                     <div className="list-product-btn">
@@ -197,7 +197,7 @@ function Shop() {
                             <div className={`card-product ${gridLayout} p-2`}>
                                 <div className="card-product-wrapper">
                                     <Link to="/product-details" className="product-img">
-                                        <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
+                                        <img className="lazyload img-product" data-src="assets/images/products/black-3.jpg" src="assets/images/products/black-3.jpg" alt="image-product" />
                                         <img className="lazyload img-hover" data-src="assets/images/products/white-1.jpg" src="assets/images/products/white-1.jpg" alt="image-product" />
                                     </Link>
                                     <div className="list-product-btn">
@@ -230,7 +230,7 @@ function Shop() {
                             <div className={`card-product ${gridLayout} p-2`}>
                                 <div className="card-product-wrapper">
                                     <Link to="/product-details" className="product-img">
-                                        <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
+                                        <img className="lazyload img-product" data-src="assets/images/products/white-1.jpg" src="assets/images/products/white-1.jpg" alt="image-product" />
                                         <img className="lazyload img-hover" data-src="assets/images/products/white-1.jpg" src="assets/images/products/white-1.jpg" alt="image-product" />
                                     </Link>
                                     <div className="list-product-btn">
@@ -263,7 +263,7 @@ function Shop() {
                             <div className={`card-product ${gridLayout} p-2`}>
                                 <div className="card-product-wrapper">
                                     <Link to="/product-details" className="product-img">
-                                        <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
+                                        <img className="lazyload img-product" data-src="assets/images/products/light-grey.jpg" src="assets/images/products/light-grey.jpg" alt="image-product" />
                                         <img className="lazyload img-hover" data-src="assets/images/products/white-1.jpg" src="assets/images/products/white-1.jpg" alt="image-product" />
                                     </Link>
                                     <div className="list-product-btn">
@@ -296,7 +296,7 @@ function Shop() {
                             <div className={`card-product ${gridLayout} p-2`}>
                                 <div className="card-product-wrapper">
                                     <Link to="/product-details" className="product-img">
-                                        <img className="lazyload img-product" data-src="assets/images/products/orange-1.jpg" src="assets/images/products/orange-1.jpg" alt="image-product" />
+                                        <img className="lazyload img-product" data-src="assets/images/products/dark-blue.jpg" src="assets/images/products/dark-blue.jpg" alt="image-product" />
                                         <img className="lazyload img-hover" data-src="assets/images/products/white-1.jpg" src="assets/images/products/white-1.jpg" alt="image-product" />
                                     </Link>
                                     <div className="list-product-btn">

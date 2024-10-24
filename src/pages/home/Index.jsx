@@ -20,7 +20,7 @@ function Index() {
       <Collection />
       <BestSeller />
       <Store />
-      <Brand />
+      {/* <Brand /> */}
       <QuickAdd/>
       <QuickView />
       <Compare />

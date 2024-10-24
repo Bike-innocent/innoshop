@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function CanvasSearch() {
   return (
@@ -29,16 +30,16 @@ function CanvasSearch() {
                             <div class="tf-search-content-title fw-5">Quick link</div>
                             <ul class="tf-quicklink-list">
                                 <li class="tf-quicklink-item">
-                                    <a href="shop-default.html" class="">Fashion</a>
+                                    <Link to="/shop" class="">Fashion</Link>
                                 </li>
                                 <li class="tf-quicklink-item">
-                                    <a href="shop-default.html" class="">Men</a>
+                                    <Link to="/shop" class="">Men</Link>
                                 </li>
                                 <li class="tf-quicklink-item">
-                                    <a href="shop-default.html" class="">Women</a>
+                                    <Link to="/shop" class="">Women</Link>
                                 </li>
                                 <li class="tf-quicklink-item">
-                                    <a href="shop-default.html" class="">Accessories</a>
+                                    <Link to="/shop" class="">Accessories</Link>
                                 </li>
                             </ul>
                         </div>
@@ -47,12 +48,12 @@ function CanvasSearch() {
                             <div class="tf-search-hidden-inner">
                                 <div class="tf-loop-item">
                                     <div class="image">
-                                        <a href="product-detail.html">
+                                        <Link to="product-details">
                                             <img src="assets/images/products/white-3.jpg" alt=""/>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div class="content">
-                                        <a href="product-detail.html">Cotton jersey top</a>
+                                        <Link to="product-details">Cotton jersey top</Link>
                                         <div class="tf-product-info-price">
                                             <div class="compare-at-price">$10.00</div>
                                             <div class="price-on-sale fw-6">$8.00</div>
@@ -61,12 +62,12 @@ function CanvasSearch() {
                                 </div>
                                 <div class="tf-loop-item">
                                     <div class="image">
-                                        <a href="product-detail.html">
+                                        <Link to="product-details">
                                             <img src="assets/images/products/white-2.jpg" alt=""/>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div class="content">
-                                        <a href="product-detail.html">Mini crossbody bag</a>
+                                        <Link to="product-details">Mini crossbody bag</Link>
                                         <div class="tf-product-info-price">
                                             <div class="price fw-6">$18.00</div>
                                         </div>
@@ -74,12 +75,12 @@ function CanvasSearch() {
                                 </div>
                                 <div class="tf-loop-item">
                                     <div class="image">
-                                        <a href="product-detail.html">
+                                        <Link to="product-details">
                                             <img src="assets/images/products/white-1.jpg" alt=""/>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div class="content">
-                                        <a href="product-detail.html">Oversized Printed T-shirt</a>
+                                        <Link to="product-details">Oversized Printed T-shirt</Link>
                                         <div class="tf-product-info-price">
                                             <div class="price fw-6">$18.00</div>
                                         </div>

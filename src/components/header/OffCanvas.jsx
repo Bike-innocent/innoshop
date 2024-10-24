@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Offcanvas } from 'bootstrap';
 
 function OffCanvas() {
@@ -73,15 +73,15 @@ function OffCanvas() {
 
             <div className="mb-other-content">
               <div className="flex group-icon">
-                <a href="wishlist.html" className="site-nav-icon">
+                <Link to="/wishlist" className="site-nav-icon">
                   <i className="icon icon-heart"></i> Wishlist
-                </a>
-                <a href="home-search.html" className="site-nav-icon">
+                </Link>
+                {/* <a href="home-search.html" className="site-nav-icon">
                   <i className="icon icon-search"></i> Search
-                </a>
+                </a> */}
               </div>
               <div className="mb-notice">
-                <a href="contact-1.html" className="text-need">Need help?</a>
+                <Link to="/contact-us" className="text-need">Need help?</Link>
               </div>
               <ul className="mb-info">
                 <li>Address: 1234 Fashion Street, Suite 567, <br /> New York, NY 10001</li>
@@ -92,9 +92,9 @@ function OffCanvas() {
           </div>
 
           <div className="mb-bottom">
-            <a href="login.html" className="site-nav-icon">
+            <Link to="/login" className="site-nav-icon">
               <i className="icon icon-account"></i> Login
-            </a>
+            </Link>
             <div>innoshop 2024</div>
           </div>
         </div>

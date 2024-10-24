@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import ProductTab from './mini-component/ProductTab'
 import Details from './mini-component/Details'
 import ProductToolBar from './mini-component/ProductToolBar'
 
 
 
+
 function ProductDetials() {
+     useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page
+      }, []);
     return (
         <>
 

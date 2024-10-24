@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function AuthModal() {
   return (
@@ -12,7 +13,7 @@ function AuthModal() {
                     <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
                 </div>
                 <div class="tf-login-form">
-                    <form class="" action="https://themesflat.co/html/ecomus/my-account.html" accept-charset="utf-8">
+                    <form class=""  accept-charset="utf-8">
                         <div class="tf-field style-1">
                             <input class="tf-field-input tf-input" placeholder=" " type="email"  name=""/>
                             <label class="tf-field-label" for="">Email *</label>
@@ -96,7 +97,7 @@ function AuthModal() {
                         </div>
                         <div class="bottom"> 
                             <div class="w-100">
-                                <a href="register.html" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Register</span></a>
+                                <Link to="/register" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Register</span></Link>
                             </div>
                             <div class="w-100">
                                 <a href="#login" data-bs-toggle="modal" class="btn-link fw-6 w-100 link">

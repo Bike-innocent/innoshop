@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ShoppingCart() {
   return (
@@ -26,9 +27,9 @@ function ShoppingCart() {
                                 <div class="tf-mini-cart-items">
                                     <div class="tf-mini-cart-item">
                                         <div class="tf-mini-cart-image">
-                                            <a href="product-detail.html">
+                                            <Link to="/product-details">
                                                 <img src="assets/images/products/white-2.jpg" alt=""/>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div class="tf-mini-cart-info">
                                             <a class="title link" href="product-detail.html">T-shirt</a>
@@ -46,12 +47,12 @@ function ShoppingCart() {
                                     </div>
                                     <div class="tf-mini-cart-item">
                                         <div class="tf-mini-cart-image">
-                                            <a href="product-detail.html">
+                                        <Link to="/product-details">
                                                 <img src="assets/images/products/white-3.jpg" alt=""/>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div class="tf-mini-cart-info">
-                                            <a class="title link" href="product-detail.html">Oversized Motif T-shirt</a>
+                                            <Link class="title link" to="/product-details">Oversized Motif T-shirt</Link>
                                             <div class="price fw-6">$25.00</div>
                                             <div class="tf-mini-cart-btns">
                                                 <div class="wg-quantity small">
@@ -74,12 +75,12 @@ function ShoppingCart() {
                                             <div class="swiper-slide">
                                                 <div class="tf-minicart-recommendations-item">
                                                     <div class="tf-minicart-recommendations-item-image">
-                                                        <a href="product-detail.html">
+                                                    <Link to="/product-details">
                                                             <img src="assets/images/products/white-3.jpg" alt=""/>
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                     <div class="tf-minicart-recommendations-item-infos flex-grow-1">
-                                                        <a class="title" href="product-detail.html">Loose Fit Sweatshirt</a>
+                                                    <Link to="/product-details" class="title">Loose Fit Sweatshirt</Link>
                                                         <div class="price">$25.00</div>
                                                     </div>
                                                     <div class="tf-minicart-recommendations-item-quickview">
@@ -92,12 +93,12 @@ function ShoppingCart() {
                                             <div class="swiper-slide">
                                                 <div class="tf-minicart-recommendations-item">
                                                     <div class="tf-minicart-recommendations-item-image">
-                                                        <a href="product-detail.html">
+                                                    <Link to="/product-details">
                                                             <img src="assets/images/products/white-2.jpg" alt=""/>
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                     <div class="tf-minicart-recommendations-item-infos flex-grow-1">
-                                                        <a class="title" href="product-detail.html">Loose Fit Hoodie</a>
+                                                    <Link to="/product-details" class="title">Loose Fit Sweatshirt</Link>
                                                         <div class="price">$25.00</div>
                                                     </div>
                                                     <div class="tf-minicart-recommendations-item-quickview">
@@ -144,8 +145,8 @@ function ShoppingCart() {
                                     </label>
                                 </div>
                                 <div class="tf-mini-cart-view-checkout">
-                                    <a href="view-cart.html" class="tf-btn btn-outline radius-3 link w-100 justify-content-center">View cart</a>
-                                    <a href="checkout.html" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Check out</span></a>
+                                    <Link to="/view-cart" class="tf-btn btn-outline radius-3 link w-100 justify-content-center">View cart</ Link>
+                                    <Link to="/check-out" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Check out</span></ Link>
                                 </div>
                             </div>
                         </div>

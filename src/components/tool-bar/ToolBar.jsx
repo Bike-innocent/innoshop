@@ -1,6 +1,6 @@
 
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 function ToolBar() {
     return (
         <>
@@ -48,13 +48,13 @@ function ToolBar() {
                     </a>
                 </div>
                 <div class="toolbar-item">
-                    <a href="wishlist.html">
+                    <Link to="/wishlist">
                         <div class="toolbar-icon">
                             <i class="icon-heart"></i>
                             <div class="toolbar-count">0</div>
                         </div>
                         <div class="toolbar-label">Wishlist</div>
-                    </a>
+                    </Link>
                 </div>
                 <div class="toolbar-item">
                     <a href="#shoppingCart" data-bs-toggle="modal">
