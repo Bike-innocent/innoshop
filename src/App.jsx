@@ -23,6 +23,7 @@ import PrivacyAndPolicy from './pages/PrivacyAndPolicy.jsx';
 import Register from './pages/Auth/Register.jsx';
 import Account from './pages/account/Account.jsx';
 import Orders from './pages/account/Orders.jsx';
+import OffCanvasComponent from './pages/OffCanvasComponent.jsx';
 
 
 // Define the router
@@ -52,6 +53,7 @@ const router = createBrowserRouter([
       { path: '/terms-and-condition', element: < TermsAndCondition/> },
       { path: '/delivery-return', element: < DeliveryAndReturns/> },
       { path: '/product-details', element: < ProductDetials/> },
+      { path: '/offcanvas', element: < OffCanvasComponent/> },
        
       
     

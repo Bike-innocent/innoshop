@@ -8,6 +8,7 @@ import OffCanvas from '../components/header/OffCanvas';
 import AuthModal from '../components/header/AuthModal';
 import ShoppingCart from '../components/header/ShoppingCart';
 import CanvasSearch from '../components/header/CanvasSearch';
+import Example from '../components/header/Example';
 
 function Main() {
 
@@ -20,7 +21,9 @@ function Main() {
                 <AuthModal />
                 <ShoppingCart />
                 <CanvasSearch />
-                <OffCanvas />
+                {/* <Example/> */}
+                
+                
                 <Outlet />
                 <Footer />
             </div>
