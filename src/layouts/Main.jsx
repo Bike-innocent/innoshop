@@ -4,11 +4,9 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../components/footer/Footer';
 import ToolBar from '../components/tool-bar/ToolBar';
 import Header from '../components/header/Header';
-import OffCanvas from '../components/header/OffCanvas';
 import AuthModal from '../components/header/AuthModal';
 import ShoppingCart from '../components/header/ShoppingCart';
-import CanvasSearch from '../components/header/CanvasSearch';
-import Example from '../components/header/Example';
+
 
 function Main() {
 
@@ -20,8 +18,7 @@ function Main() {
             <div className='mt-[50px] lg:mt-[70px]'>
                 <AuthModal />
                 <ShoppingCart />
-                <CanvasSearch />
-                {/* <Example/> */}
+               
                 
                 
                 <Outlet />
