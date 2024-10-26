@@ -8,6 +8,10 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
   }, [offcanvasRef]);
 
   return (
+
+
+
+
     <div
       className="offcanvas offcanvas-start canvas-mb h-[100vh] flex flex-col"
       
@@ -104,6 +108,11 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
         <div className="text-sm mt-2">© Innoshop 2024</div>
       </div>
     </div>
+
+
+
+
+    
   );
 }
 
