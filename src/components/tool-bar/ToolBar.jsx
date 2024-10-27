@@ -124,19 +124,23 @@ function ToolBar() {
             {/* toolbar-bottom */}
             <div className="tf-toolbar-bottom type-1150">
                 <div className="toolbar-item active">
-                    <a href="#toolbarShopmb" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft">
+                <Link to="/shop">
                         <div className="toolbar-icon">
                             <i className="icon-shop"></i>
                         </div>
                         <div className="toolbar-label">Shop</div>
-                    </a>
+                        </Link>
                 </div>
 
-                <div className="toolbar-item  text-center mt-[10px]">
+                <div className="toolbar-item  ">
+                    <a >
+
+                  
                     <div onClick={toggleSearchOffcanvas} aria-controls="offcanvasLeft" className="toolbar-icon text-lg">
                         <i className="icon-search"></i>
                     </div>
                     <div className="toolbar-label">Search</div>
+                    </a>
                 </div>
                 
                 <div className="toolbar-item">
