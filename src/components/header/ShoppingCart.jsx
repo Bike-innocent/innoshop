@@ -10,7 +10,7 @@ function ShoppingCart() {
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="header">
-                            <div class="title fw-5">Shopping carthhjcvg</div>
+                            <div class="title fw-5">Shopping cart</div>
                             <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
                         </div>
                         <div class="wrap">

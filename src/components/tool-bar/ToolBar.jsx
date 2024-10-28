@@ -66,7 +66,7 @@
 //                     </a>
 //                 </div>
 //             </div>
-            
+
 
 //         </>
 //     )
@@ -124,34 +124,34 @@ function ToolBar() {
             {/* toolbar-bottom */}
             <div className="tf-toolbar-bottom type-1150">
                 <div className="toolbar-item active">
-                <Link to="/shop">
+                    <Link to="/shop">
                         <div className="toolbar-icon">
                             <i className="icon-shop"></i>
                         </div>
                         <div className="toolbar-label">Shop</div>
-                        </Link>
+                    </Link>
                 </div>
 
                 <div className="toolbar-item  ">
                     <a >
 
-                  
-                    <div onClick={toggleSearchOffcanvas} aria-controls="offcanvasLeft" className="toolbar-icon text-lg">
-                        <i className="icon-search"></i>
-                    </div>
-                    <div className="toolbar-label">Search</div>
+
+                        <div onClick={toggleSearchOffcanvas} aria-controls="offcanvasLeft" className="toolbar-icon text-lg">
+                            <i className="icon-search"></i>
+                        </div>
+                        <div className="toolbar-label">Search</div>
                     </a>
                 </div>
-                
+
                 <div className="toolbar-item">
-                    <a href="#login" data-bs-toggle="modal">
+                    <Link to="/account">
                         <div className="toolbar-icon">
                             <i className="icon-account"></i>
                         </div>
                         <div className="toolbar-label">Account</div>
-                    </a>
+                    </Link>
                 </div>
-                
+
                 <div className="toolbar-item">
                     <Link to="/wishlist">
                         <div className="toolbar-icon">
@@ -161,7 +161,7 @@ function ToolBar() {
                         <div className="toolbar-label">Wishlist</div>
                     </Link>
                 </div>
-                
+
                 <div className="toolbar-item">
                     <a href="#shoppingCart" data-bs-toggle="modal">
                         <div className="toolbar-icon">
@@ -174,7 +174,7 @@ function ToolBar() {
             </div>
 
             {/* Include Search OffCanvas */}
-           
+
             <SearchOffCanvas offcanvasRef={searchOffcanvasRef} closeOffcanvasAndNavigate={closeOffcanvasAndNavigate} />
         </>
     );

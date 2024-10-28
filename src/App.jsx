@@ -24,6 +24,7 @@ import Register from './pages/Auth/Register.jsx';
 import Account from './pages/account/Account.jsx';
 import Orders from './pages/account/Orders.jsx';
 import OffCanvasComponent from './pages/OffCanvasComponent.jsx';
+import Address from './pages/account/Address.jsx';
 
 
 // Define the router
@@ -49,6 +50,7 @@ const router = createBrowserRouter([
       { path: '/compare', element: < Compare/> },
       { path: '/wishlist', element: < Wishlist/> },
       { path: '/orders', element: < Orders/> },
+      { path: '/address', element: < Address/> },
       { path: '/privacy-policy', element: < PrivacyAndPolicy/> },
       { path: '/terms-and-condition', element: < TermsAndCondition/> },
       { path: '/delivery-return', element: < DeliveryAndReturns/> },
