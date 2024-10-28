@@ -23,7 +23,7 @@ function ContactUs() {
                         </div>
                         <div class="mb_20">
                             <p class="mb_15"><strong>Phone</strong></p>
-                            <p>(623) 934-2400</p>
+                            <p>(+234) 808 887 9523 </p>
                         </div>
                         <div class="mb_20">
                             <p class="mb_15"><strong>Email</strong></p>

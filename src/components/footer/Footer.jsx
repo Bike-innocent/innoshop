@@ -26,10 +26,11 @@ function Footer() {
                                                 <p>Address: 1234 Fashion Street, Suite 567, <br /> New York, NY 10001</p>
                                             </li>
                                             <li>
-                                                <p>Email: <a href="#"></a></p>
+                                                <p>Email: <a href="#">info@example.com</a></p>
                                             </li>
                                             <li>
-                                                <p>Phone: <a href="#">(212) 555-1234</a></p>
+                                            
+                                                <p>Phone: <a href="#">(+234)808 887 9523</a></p>
                                             </li>
                                         </ul>
                                         <a href="contact-1.html" class="tf-btn btn-line">Get direction<i class="icon icon-arrow1-top-left"></i></a>
@@ -51,7 +52,7 @@ function Footer() {
                             <div class="row">
                                 <div class="col-12">
                                     <div class="footer-bottom-wrap d-flex gap-20 flex-wrap justify-content-between align-items-center">
-                                        <div class="footer-menu_item">© 2024 Innoshop Store. All Rights Reserved</div>
+                                        <div class="footer-menu_item">© 2024 Innoshop Store. <a href="https://chibuikeinnocent.tech" className='text-blue-500'>chibuike innocent</a>  All Rights Reserved </div>
                                         <div class="tf-payment">
                                             <img src="assets/images/payments/visa.png" alt="" />
                                             <img src="assets/images/payments/img-1.png" alt="" />

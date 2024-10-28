@@ -94,8 +94,8 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
           </div>
           <ul className="mb-info space-y-2">
             <li>Address: 1234 Fashion Street, Suite 567, New York, NY 10001</li>
-            <li>Email: <b>info@fashionshop.com</b></li>
-            <li>Phone: <b>(212) 555-1234</b></li>
+            <li>Email: <b>info@example.com</b></li>
+            <li>Phone: <b>(+234)808 887 9523 </b></li>
           </ul>
         </div>
       </div>
@@ -105,7 +105,7 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
         <a onClick={() => closeOffcanvasAndNavigate("/login")}  className="site-nav-icon">
           <i className="icon icon-account"></i> Login
         </a>
-        <div className="text-sm mt-2">© Innoshop 2024</div>
+        <div className="text-sm mt-2">© Innoshop store <a href="https://chibuikeinnocent.tech" className='text-blue-500'>chibuike innocent</a> 2024</div>
       </div>
     </div>
 
