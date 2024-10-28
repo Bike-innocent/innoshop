@@ -8,11 +8,9 @@ function Account() {
         <div className="mb_60">
           <h5 className="fw-5 mb_20">Hello User</h5>
           <p>
-            From your account dashboard you can view your{' '}
-            <a className="text_primary" href="/orders">recent orders</a>, manage your{' '}
-            <a className="text_primary" href="/addresses">shipping and billing addresses</a>, and{' '}
-            <a className="text_primary" href="/account-details">edit your password and account details</a>.
+            Welcome to  <b>innoshop!</b> my project The frontend is ready for you to explore, and am actively working on the backend to complete the full experience. Stay tuned for more updates as I continue building out the functionality! <a href="https://chibuikeinnocent.tech/projects" target='_blank' className='text-blue-600'>Read more...</a>
           </p>
+
         </div>
       </div>
     </AccountLayout>

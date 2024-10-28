@@ -80,7 +80,7 @@ function Header() {
           <div className="w-1/3">
             <ul className="nav-icon flex justify-content-end align-items-center gap-20">
               <li className="nav-search"><button onClick={toggleSearchOffcanvas} data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" className="nav-icon-item"><i className="icon icon-search"></i></button></li>
-              <li className="nav-account"><a href="#login" className="nav-icon-item"><i className="icon icon-account"></i></a></li>
+              <li className="nav-account"><Link to="/account" className="nav-icon-item"><i className="icon icon-account"></i></Link></li>
               <li className="nav-wishlist"><Link to="/wishlist" className="nav-icon-item"><i className="icon icon-heart"></i><span className="count-box">0</span></Link></li>
               <li className="nav-cart"><a href="#shoppingCart" data-bs-toggle="modal" className="nav-icon-item"><i className="icon icon-bag"></i><span className="count-box">0</span></a></li>
             </ul>

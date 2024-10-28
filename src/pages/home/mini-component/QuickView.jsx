@@ -27,8 +27,8 @@ function QuickView() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-button-next button-style-arrow single-slide-prev"></div>
-                            <div class="swiper-button-prev button-style-arrow single-slide-next"></div>
+                            {/* <div class="swiper-button-next button-style-arrow single-slide-prev"></div>
+                            <div class="swiper-button-prev button-style-arrow single-slide-next"></div> */}
                         </div>
                     </div>
                     <div class="tf-product-info-wrap position-relative">
