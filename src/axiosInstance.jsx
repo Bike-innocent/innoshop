@@ -3,8 +3,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-   //baseURL: 'http://localhost:8000/api', // Use the correct base URL
-  baseURL: 'https://backend.chibuikeinnocent.tech/api',
+  baseURL: 'http://localhost:8000/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -24,8 +23,8 @@ axiosInstance.interceptors.request.use(
       // Fetch CSRF token if it doesn't exist
       if (!xsrfTokenExists && !config.url.includes('/sanctum/csrf-cookie')) {
         console.log('Fetching CSRF token...');
-     //await axios.get('http://localhost:8000/sanctum/csrf-cookie', {
-     await axios.get('https://backend.chibuikeinnocent.tech/sanctum/csrf-cookie', {
+        await axios.get('http://localhost:8000/sanctum/csrf-cookie', {
+
           withCredentials: true,
         });
       }
@@ -37,7 +36,7 @@ axiosInstance.interceptors.request.use(
         config.headers.Authorization = `Bearer ${token}`;
       } else {
         console.log('No Authorization token found');
-      } 
+      }
     } catch (error) {
       console.error('Error in request interceptor:', error);
       return Promise.reject(error);
@@ -76,7 +75,7 @@ axiosInstance.interceptors.response.use(
           !error.config.url.includes('/sanctum/csrf-cookie')
         ) {
           sessionStorage.setItem('previousPath', currentPath);
-          window.location.href = '/';
+          window.location.href = '/login';
         }
       } else if (error.response.status === 404) {
         window.location.href = '/not-found';

@@ -25,6 +25,8 @@ import Account from './pages/account/Account.jsx';
 import Orders from './pages/account/Orders.jsx';
 import OffCanvasComponent from './pages/OffCanvasComponent.jsx';
 import Address from './pages/account/Address.jsx';
+import Counter from './Example.jsx';
+import ForgetPassword from './pages/auth/ForgetPassword.jsx';
 
 
 // Define the router
@@ -36,6 +38,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Index /> },
    
       { path: '/login', element: <Login /> },
+      { path: '/forget-password', element: <ForgetPassword /> },
       { path: '/register', element: <Register /> },
       { path: '/not-found', element: <NotFound /> },
       { path: '*', element: <NotFound /> },
@@ -56,10 +59,15 @@ const router = createBrowserRouter([
       { path: '/delivery-return', element: < DeliveryAndReturns/> },
       { path: '/product-details', element: < ProductDetials/> },
       { path: '/offcanvas', element: < OffCanvasComponent/> },
+      { path: '/counter', element: < Counter/> },
        
       
     
     ],
+
+    
+
+    
   },
  
 ]);
