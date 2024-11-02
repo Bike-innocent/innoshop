@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Shop from './pages/shop/Shop.jsx';
 
-import ProductDetials from './pages/product-details/ProductDetials.jsx';
+
 import AboutUs from './pages/about/AboutUs.jsx';
 import ContactUs from './pages/contact/ContactUs.jsx';
 import CheckOut from './pages/check-out/CheckOut.jsx';
@@ -25,8 +25,11 @@ import Account from './pages/account/Account.jsx';
 import Orders from './pages/account/Orders.jsx';
 import OffCanvasComponent from './pages/OffCanvasComponent.jsx';
 import Address from './pages/account/Address.jsx';
-import Counter from './Example.jsx';
+
 import ForgetPassword from './pages/auth/ForgetPassword.jsx';
+import Products from './pages/Products.jsx';
+// import ProductDetials from './pages/ProductDetials.jsx';
+import ProductDetails from './pages/ProductDetails.jsx';
 
 
 // Define the router
@@ -57,9 +60,10 @@ const router = createBrowserRouter([
       { path: '/privacy-policy', element: < PrivacyAndPolicy/> },
       { path: '/terms-and-condition', element: < TermsAndCondition/> },
       { path: '/delivery-return', element: < DeliveryAndReturns/> },
-      { path: '/product-details', element: < ProductDetials/> },
+      // { path: '/product-details', element: < ProductDetials/> },
+      { path: '/product/:slug', element: < ProductDetails/> },
       { path: '/offcanvas', element: < OffCanvasComponent/> },
-      { path: '/counter', element: < Counter/> },
+      { path: '/products', element: < Products/> },
        
       
     
