@@ -28,26 +28,34 @@ function ProductDetails() {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
 
-      
+      {/* Display primary image */}
+     
+
       {/* Display additional images */}
       <div className="flex flex-wrap gap-4 mb-8">
         {product.images?.map((image) => (
-          <img
+          <a
             key={image.id}
-            src={image.image_path}
-            alt={`${product.name} - additional image`}
-            className="w-32 h-32 object-cover rounded-lg"
-          />
+            href={image.image_path}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={image.image_path}
+              alt={`${product.name} - additional image`}
+              className="w-32 h-32 object-cover rounded-lg"
+            />
+          </a>
         ))}
       </div>
 
       <p className="text-gray-600 mb-2">Category: {product.category?.name}</p>
-      <p className="text-gray-600 mb-2">Brand: {product.brand?.name || 'N/A'}</p>
+      
       <p className="text-gray-600 mb-2">Color: {product.colour?.name} (Hex: {product.colour?.hex_code})</p>
       <p className="text-gray-600 mb-2">Size: {product.size?.name}</p>
       <p className="text-gray-600 mb-2">Price: ${product.price}</p>
-      <p className="text-gray-600 mb-2">Stock: {product.stock_quantity}</p>
-      <p className="text-gray-600 mb-2">Supplier: {product.supplier?.name || 'N/A'}</p>
+    
+     
       <p className="text-gray-600 mt-4">{product.description}</p>
     </div>
   );

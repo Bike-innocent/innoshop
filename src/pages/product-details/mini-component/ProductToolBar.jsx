@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProductToolBar() {
+function ProductToolBar({ product }) {
     return (
         <>
 
@@ -9,9 +9,10 @@ function ProductToolBar() {
                     <div class="tf-height-observer w-100 d-flex align-items-center">
                         <div class="tf-sticky-atc-product d-flex align-items-center">
                             <div class="tf-sticky-atc-img">
-                                <img class="lazyloaded" data-src="assets/images/shop/products/p-d1.png" alt="" src="assets/images/shop/products/p-d1.png" />
+                            <img className="lazyloaded" src={product.primary_image?.image_path} alt={product.name} />
+                               
                             </div>
-                            <div class="tf-sticky-atc-title fw-5 d-xl-block d-none">Cotton buike jersey top</div>
+                            <div class="tf-sticky-atc-title fw-5 d-xl-block d-none">{product.name}</div>
                         </div>
                         <div class="tf-sticky-atc-infos">
                             <form class="">
@@ -43,7 +44,7 @@ function ProductToolBar() {
                                             <span class="btn-quantity plus-btn">+</span>
                                         </div>
                                     </div>
-                                    <a href="#" class="tf-btn btn-fill radius-3 justify-content-center fw-6 fs-14 flex-grow-1 animate-hover-btn ">Add to cart</a>
+                                    <a href="#" class="tf-btn btn-fill radius-3 justify-content-center fw-6 fs-14 flex-grow-1 animate-hover-btn ">Add to cart - ${product.price}</a>
                                 </div>
                             </form>
                         </div>

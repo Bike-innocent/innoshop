@@ -18,17 +18,12 @@ function Main() {
             <div className='mt-[50px] lg:mt-[70px]'>
                 <AuthModal />
                 <ShoppingCart />
-               
-                
-                
+              
                 <Outlet />
+                
                 <Footer />
             </div>
-
-
             <ToolBar />
-
-
         </main>
 
     );

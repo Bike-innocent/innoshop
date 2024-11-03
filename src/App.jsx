@@ -7,8 +7,6 @@ import Login from './pages/Auth/Login.jsx';
 import NotFound from './pages/NotFound.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Shop from './pages/shop/Shop.jsx';
-
-
 import AboutUs from './pages/about/AboutUs.jsx';
 import ContactUs from './pages/contact/ContactUs.jsx';
 import CheckOut from './pages/check-out/CheckOut.jsx';
@@ -29,7 +27,8 @@ import Address from './pages/account/Address.jsx';
 import ForgetPassword from './pages/auth/ForgetPassword.jsx';
 import Products from './pages/Products.jsx';
 // import ProductDetials from './pages/ProductDetials.jsx';
-import ProductDetails from './pages/ProductDetails.jsx';
+import ProductDetails from './pages/product-details/ProductDetials.jsx';
+import SkeletonLoader from './pages/shop/mini-component/SkeletonLoader.jsx';
 
 
 // Define the router
@@ -39,7 +38,6 @@ const router = createBrowserRouter([
     element: <Main/>,
     children: [
       { path: '/', element: <Index /> },
-   
       { path: '/login', element: <Login /> },
       { path: '/forget-password', element: <ForgetPassword /> },
       { path: '/register', element: <Register /> },
@@ -64,6 +62,7 @@ const router = createBrowserRouter([
       { path: '/product/:slug', element: < ProductDetails/> },
       { path: '/offcanvas', element: < OffCanvasComponent/> },
       { path: '/products', element: < Products/> },
+      { path: '/s', element: < SkeletonLoader/> },
        
       
     
