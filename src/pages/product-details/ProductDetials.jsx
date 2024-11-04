@@ -74,12 +74,93 @@
 
 
 // ProductDetails.jsx
+
+
+
+
+
+
+
+
+
+// import React, { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
+// import axiosInstance from '../../axiosInstance';
+// import Details from './mini-component/Details';
+// import ProductTab from './mini-component/ProductTab';
+// import ProductToolBar from './mini-component/ProductToolBar';
+
+// function ProductDetails() {
+//   const { slug } = useParams();
+//   const [product, setProduct] = useState(null);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     window.scrollTo(0, 0); // Scroll to the top of the page
+//     const fetchProduct = async () => {
+//       try {
+//         const response = await axiosInstance.get(`/products/${slug}`);
+//         setProduct(response.data);
+//       } catch (error) {
+//         setError('Failed to fetch product details.');
+//         console.error('Error fetching product:', error);
+//       }
+//     };
+
+//     fetchProduct();
+//   }, [slug]);
+
+//   if (error) return <p className="text-red-500">{error}</p>;
+//   if (!product) return <p>Loading...</p>;
+
+//   return (
+//     <>
+//       <section className="flat-spacing-4">
+//         <div className="tf-main-product section-image-zoom">
+//           <div className="container">
+//             <div className="row">
+//               <div className="col-md-6">
+//                 {/* Render primary image and additional images */}
+//                 <div className="tf-product-media-wrap">
+//                   <div className="d-grid grid-template-columns-2 gap-10">
+
+//                     {product.images?.map((image) => (
+//                       <a key={image.id} href={image.image_path} target="_blank" rel="noopener noreferrer">
+//                         <img className="radius-10 tf-image-zoom " src={image.image_path} alt={`${product.name} additional`} />
+//                       </a>
+//                     ))}
+//                   </div>
+//                 </div>
+//               </div>
+
+//               {/* Pass product data to the Details component */}
+//               <Details product={product} />
+//             </div>
+//           </div>
+//         </div>
+
+//         <ProductToolBar product={product} />
+//       </section>
+//       <ProductTab />
+//     </>
+//   );
+// }
+
+// export default ProductDetails;
+
+
+
+
+
+
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axiosInstance from '../../axiosInstance';
 import Details from './mini-component/Details';
 import ProductTab from './mini-component/ProductTab';
 import ProductToolBar from './mini-component/ProductToolBar';
+import ProductDetailsSkeleton from './mini-component/ProductDetailsSkeleton';
 
 function ProductDetails() {
   const { slug } = useParams();
@@ -102,7 +183,11 @@ function ProductDetails() {
   }, [slug]);
 
   if (error) return <p className="text-red-500">{error}</p>;
-  if (!product) return <p>Loading...</p>;
+
+  // Display skeleton while product data is loading
+  if (!product) {
+    return <ProductDetailsSkeleton />;
+  }
 
   return (
     <>
@@ -111,10 +196,8 @@ function ProductDetails() {
           <div className="container">
             <div className="row">
               <div className="col-md-6">
-                {/* Render primary image and additional images */}
                 <div className="tf-product-media-wrap">
                   <div className="d-grid grid-template-columns-2 gap-10">
-                  
                     {product.images?.map((image) => (
                       <a key={image.id} href={image.image_path} target="_blank" rel="noopener noreferrer">
                         <img className="radius-10 tf-image-zoom" src={image.image_path} alt={`${product.name} additional`} />
@@ -124,7 +207,6 @@ function ProductDetails() {
                 </div>
               </div>
 
-              {/* Pass product data to the Details component */}
               <Details product={product} />
             </div>
           </div>
