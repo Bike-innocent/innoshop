@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { Offcanvas } from 'bootstrap';
+import { AuthUser } from '../../service/AuthUser';
 
 function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
   useEffect(() => {
     const bsOffcanvas = new Offcanvas(offcanvasRef.current);
     return () => bsOffcanvas.dispose();
   }, [offcanvasRef]);
+
+  const { data: user, isLoading, isError } = AuthUser();
 
   return (
 
@@ -14,7 +17,7 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
 
     <div
       className="offcanvas offcanvas-start canvas-mb h-[100vh] flex flex-col"
-      
+
       ref={offcanvasRef}
     >
       {/* Sticky Header Section with Close Icon */}
@@ -25,7 +28,7 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
           data-bs-dismiss="offcanvas"
           aria-label="Close"
         >
-         
+
         </span>
       </div>
 
@@ -80,12 +83,25 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
               FAQ
             </a>
           </li>
+
+          {/* Conditionally render for admin */}
+          {user?.roles?.some(role => role.name === 'admin') && (
+            // <li><Link to="/dashboard" className="item-link">Dashboard</Link></li>
+            <li className="nav-mb-item">
+              <a
+                onClick={() => closeOffcanvasAndNavigate("/dashboard")}
+                className="collapsed mb-menu-link"
+              >
+                Dashboard
+              </a>
+            </li>
+          )}
         </ul>
 
         {/* Additional Content */}
         <div className="mt-4">
           <div className="flex items-center space-x-4 mb-4">
-            <a  onClick={() => closeOffcanvasAndNavigate("/wishlist")} className="site-nav-icon">
+            <a onClick={() => closeOffcanvasAndNavigate("/wishlist")} className="site-nav-icon">
               <i className="icon icon-heart"></i> Wishlist
             </a>
           </div>
@@ -102,7 +118,7 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
 
       {/* Fixed Footer Section */}
       <div className="p-4 bg-white border-t shadow-sm border-gray-300 sticky bottom-0">
-        <a onClick={() => closeOffcanvasAndNavigate("/login")}  className="site-nav-icon">
+        <a onClick={() => closeOffcanvasAndNavigate("/login")} className="site-nav-icon">
           <i className="icon icon-account"></i> Login
         </a>
         <div className="text-sm mt-2">© Innoshop store <a href="https://chibuikeinnocent.tech" className='text-blue-500'>chibuike innocent</a> 2024</div>
@@ -112,7 +128,7 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
 
 
 
-    
+
   );
 }
 
