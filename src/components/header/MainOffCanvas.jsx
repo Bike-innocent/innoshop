@@ -34,6 +34,8 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
 
       {/* Scrollable Middle Content */}
       <div className="flex-1 overflow-y-auto p-3 bg-white">
+
+        
         <ul className="nav-ul-mb space-y-1" id="wrapper-menu-navigation">
           <li className="nav-mb-item">
             <a

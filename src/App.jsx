@@ -29,6 +29,7 @@ import Products from './pages/Products.jsx';
 // import ProductDetials from './pages/ProductDetials.jsx';
 import ProductDetails from './pages/product-details/ProductDetials.jsx';
 import SkeletonLoader from './pages/shop/mini-component/SkeletonLoader.jsx';
+import Dashboard from './pages/dashboard/Dashboard.jsx';
 
 
 // Define the router
@@ -62,6 +63,7 @@ const router = createBrowserRouter([
       { path: '/product/:slug', element: < ProductDetails/> },
       { path: '/offcanvas', element: < OffCanvasComponent/> },
       { path: '/products', element: < Products/> },
+      { path: '/dashboard', element: < Dashboard/> },
       { path: '/s', element: < SkeletonLoader/> },
        
       
