@@ -30,7 +30,7 @@ const DashboardOffCanvas = React.forwardRef(({ closeOffcanvasAndNavigate }, ref)
                     <ul className="nav-ul-mb space-y-1" id="wrapper-menu-navigation">
                         <li className="nav-mb-item">
                             <a
-                                onClick={() => closeOffcanvasAndNavigate("dashboard/product-category")}
+                                onClick={() => closeOffcanvasAndNavigate("/dashboard/product-category")}
                                 className="collapsed mb-menu-link current"
                             >
                                 Product Category

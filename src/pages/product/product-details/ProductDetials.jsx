@@ -156,7 +156,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axiosInstance from '../../axiosInstance';
+import axiosInstance from '../../../axiosInstance';
 import Details from './mini-component/Details';
 import ProductTab from './mini-component/ProductTab';
 import ProductToolBar from './mini-component/ProductToolBar';
