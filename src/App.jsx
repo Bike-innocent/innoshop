@@ -129,6 +129,7 @@ import ProductCategory from './pages/product/product-category/ProductCategory.js
 import Brand from './pages/product/Brand.jsx';
 import Colour from './pages/product/Colour.jsx';
 import Size from './pages/product/Size.jsx';
+import Supplier from './pages/product/Supplier.jsx';
 
 const router = createBrowserRouter([
   {
@@ -171,6 +172,7 @@ const router = createBrowserRouter([
           { path: 'brand', element: <Brand /> }, // Nested under Dashboard
           { path: 'colour', element: <Colour /> }, // Nested under Dashboard
           { path: 'size', element: <Size /> }, // Nested under Dashboard
+          { path: 'supplier', element: <Supplier /> }, // Nested under Dashboard
         ],
       },
     ],
