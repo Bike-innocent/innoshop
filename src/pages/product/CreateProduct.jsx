@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../axiosInstance';
 
+import CreateProductImage from './CreateProductImage';
+
+
 const CreateProduct = () => {
   const [categories, setCategories] = useState([]);
   const [brands, setBrands] = useState([]);
   const [colours, setColours] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [suppliers, setSuppliers] = useState([]);
+  const [images, setImages] = useState([]);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -81,14 +85,33 @@ const CreateProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    // Create FormData object to handle form submission with files
+    const data = new FormData();
+  
+    // Append text fields to FormData
+    Object.keys(formData).forEach((key) => {
+      data.append(key, formData[key]);
+    });
+  
+    // Append images to FormData
+    images.forEach((image, index) => {
+      data.append(`images[]`, image.file); // use `images[]` as the key for array
+    });
+  
     try {
-      await axiosInstance.post('/products', formData);
+      // Send a POST request with FormData
+      await axiosInstance.post('/products', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
       alert('Product created successfully');
     } catch (error) {
       console.error('Error creating product:', error);
     }
   };
-
+  
   return (
     <form onSubmit={handleSubmit} className="p-4 space-y-4">
       <div>
@@ -103,6 +126,11 @@ const CreateProduct = () => {
           required
         />
       </div>
+
+
+
+
+
 
       
       <div>
@@ -232,6 +260,16 @@ const CreateProduct = () => {
         />
       </div>
 
+      <div>
+        <CreateProductImage images={images} setImages={setImages} />
+      </div>
+
+
+
+
+
+
+
       <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">
         Create Product
       </button>
@@ -240,3 +278,57 @@ const CreateProduct = () => {
 };
 
 export default CreateProduct;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
