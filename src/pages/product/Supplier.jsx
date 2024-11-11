@@ -94,7 +94,7 @@ const Supplier = () => {
                 <button onClick={() => { setCurrentSupplier(supplier); setIsDeleteModalOpen(true); }} className="px-2 py-1 bg-red-500 text-white rounded">Delete</button> */}
               </td>
             </tr>
-          ))}
+          ))} 
         </tbody>
       </table>
 
