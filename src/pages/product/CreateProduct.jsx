@@ -127,12 +127,6 @@ const CreateProduct = () => {
         />
       </div>
 
-
-
-
-
-
-      
       <div>
         <label>Category:</label>
         <select
@@ -266,10 +260,6 @@ const CreateProduct = () => {
 
 
 
-
-
-
-
       <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">
         Create Product
       </button>
@@ -278,19 +268,6 @@ const CreateProduct = () => {
 };
 
 export default CreateProduct;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

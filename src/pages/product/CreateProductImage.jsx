@@ -20,12 +20,7 @@ const CreateProductImage = ({ images, setImages }) => {
     setImages(updatedImages);
   };
 
-  const handleDragStart = (index) => {
-    const draggedItem = images[index];
-    setImages((prevImages) => prevImages.filter((_, idx) => idx !== index));
-    setImages((prevImages) => [draggedItem, ...prevImages]);
-  };
-
+ 
   const handlePrimaryChange = (index) => {
     setImages(
       images.map((img, idx) => ({
