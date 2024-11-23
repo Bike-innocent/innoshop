@@ -17,11 +17,11 @@
 //         setImages([...images, ...newImages]);
 //     };
 
-//     const handleRemoveImage = (index) => {
-//         const updatedImages = [...images];
-//         updatedImages.splice(index, 1);
-//         setImages(updatedImages);
-//     };
+    // const handleRemoveImage = (index) => {
+    //     const updatedImages = [...images];
+    //     updatedImages.splice(index, 1);
+    //     setImages(updatedImages);
+    // };
 
 
 //     const handlePrimaryChange = (index) => {
@@ -84,29 +84,47 @@
 
 // export default EditProductImage;
 
-import React from 'react';
-import { FaTrash } from 'react-icons/fa';
 
-const EditProductImage = ({ images, setImages }) => {
-  const handleDelete = (imageId) => {
-    setImages((prevImages) => prevImages.filter((img) => img.id !== imageId));
-    // Optionally, send a delete request to the server to remove the image
+
+
+
+
+
+import React from "react";
+import { FaTrash } from "react-icons/fa";
+
+const EditProductImage = ({ images, setImages, setDeletedImages }) => {
+
+  const handleRemoveImage = (index, image) => {
+    // Check if the image has an `id` (exists in the database)
+    if (image.id) {
+      setDeletedImages((prev) => [...prev, image.id]);
+    }
+    // Remove the image from the state
+    const updatedImages = [...images];
+    updatedImages.splice(index, 1);
+    setImages(updatedImages);
   };
 
   return (
     <div className="mt-6">
       <h3 className="text-lg font-semibold mb-4">Current Images</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {images.map((image) => (
-          <div key={image.id} className="relative">
+        {images.map((image, index) => (
+          <div key={image.id || index} className="relative">
             <img
-              src={image.image_path}
-              alt={image.name || 'Product Image'}
-              className="w-full h-32 object-cover rounded"
+                src={image.image_path || URL.createObjectURL(image.file)}
+              alt="Product"
+              className="w-full max-h-80 object-cover rounded"
             />
+            {image.is_primary === 1 && (
+              <span className="absolute bottom-0 left-0 bg-blue-600 text-white text-xs rounded px-1">
+                Primary
+              </span>
+            )}
             <button
               type="button"
-              onClick={() => handleDelete(image.id)}
+              onClick={() => handleRemoveImage(index, image)}
               className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full shadow hover:bg-red-600"
             >
               <FaTrash />
@@ -119,3 +137,10 @@ const EditProductImage = ({ images, setImages }) => {
 };
 
 export default EditProductImage;
+
+
+
+
+
+
+
