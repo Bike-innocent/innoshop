@@ -138,6 +138,8 @@
 
 // export default EditProductImage;
 
+//update 
+
 
 import React, { useEffect } from "react";
 import { FaTrash, FaCamera } from "react-icons/fa";
