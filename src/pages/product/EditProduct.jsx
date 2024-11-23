@@ -356,12 +356,6 @@
 
 
 
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axiosInstance from '../../axiosInstance';
@@ -391,6 +385,7 @@ const EditProduct = () => {
   const [images, setImages] = useState([]);
   const [newImages, setNewImages] = useState([]);
   const [deletedImages, setDeletedImages] = useState([]);
+  const [primaryIndex, setPrimaryIndex] = useState(null); // Track primary image index
   const [errors, setErrors] = useState({});
   const [processing, setProcessing] = useState(false);
 
@@ -414,6 +409,7 @@ const EditProduct = () => {
         });
 
         setImages(productData.images || []);
+        setPrimaryIndex(productData.primary_image_index || 0);
 
         const [categoriesRes, brandsRes, coloursRes, sizesRes, suppliersRes] = await Promise.all([
           axiosInstance.get('/product-categories'),
@@ -453,6 +449,7 @@ const EditProduct = () => {
     setImages([...images, ...newImageObjects]);
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
@@ -464,6 +461,9 @@ const EditProduct = () => {
 
     newImages.forEach((image, index) => formDataToSend.append(`new_images[${index}]`, image));
     deletedImages.forEach((imageId, index) => formDataToSend.append(`deleted_images[${index}]`, imageId));
+    
+    // Append primary image index
+    formDataToSend.append('primary_image_index', primaryIndex);
 
     try {
       await axiosInstance.post(`/products/${slug}`, formDataToSend, {
@@ -651,8 +651,15 @@ const EditProduct = () => {
           </div>
 
 
+
+
+
+
+
+
+
           <div>
-            <EditProductImage images={images} setImages={setImages} setDeletedImages={setDeletedImages} />
+            <EditProductImage images={images} setImages={setImages} setDeletedImages={setDeletedImages} setPrimaryIndex={setPrimaryIndex} />
           </div>
           <button
             type="submit"
@@ -668,3 +675,4 @@ const EditProduct = () => {
 };
 
 export default EditProduct;
+
