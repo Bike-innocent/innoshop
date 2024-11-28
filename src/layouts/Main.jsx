@@ -12,7 +12,7 @@ function Main() {
 
 
     return (
-        <main className="overflow-x-hidden">
+        <main className="overflow-x-hidden font-sans">
 
             <Header />
             <div className='mt-[50px] lg:mt-[70px]'>
