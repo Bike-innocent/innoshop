@@ -22,7 +22,7 @@ function Index() {
       <Store />
       {/* <Brand /> */}
       <QuickAdd/>
-      <QuickView />
+     
       <Compare />
 
     </>
