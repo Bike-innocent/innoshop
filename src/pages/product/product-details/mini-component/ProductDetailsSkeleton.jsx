@@ -13,10 +13,10 @@ function ProductDetailsSkeleton() {
               <div className="tf-product-media-wrap">
                 <div className="d-grid grid-template-columns-2 gap-10">
                   {/* Skeletons for product images */}
-                  <Skeleton className="w-full h-80 rounded-md" />
-                  <Skeleton className="w-full h-80 rounded-md" />
-                  <Skeleton className="w-full h-80 rounded-md" />
-                  <Skeleton className="w-full h-80 rounded-md" />
+                  <Skeleton className="w-full h-[200px] sm:h-[300px] rounded-md" />
+                  <Skeleton className="w-full h-[200px] sm:h-[300px] rounded-md" />
+                  <Skeleton className="w-full h-[200px] sm:h-[300px] rounded-md" />
+                  <Skeleton className="w-full h-[200px] sm:h-[300px] rounded-md" />
                 </div>
               </div>
             </div>

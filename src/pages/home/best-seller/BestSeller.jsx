@@ -377,7 +377,7 @@
 //                                                 <AiOutlineShoppingCart className="text-xl" />
 //                                                 <span class="text">QUICK ADD</span>
 //                                             </a>
-                                        
+
 
 //                                              <button
 //                                                     className="box-icon quickview style-2"
@@ -386,7 +386,7 @@
 //                                                     <AiOutlineEye className="text-xl" />
 //                                                     <span className="text">QUICK VIEW</span>
 //                                                 </button>
-                                            
+
 //                                         </div>
 //                                     </div>
 
@@ -396,17 +396,17 @@
 //                                         </Link>
 //                                         <span className="price">${product.price}</span>
 
-//                                         <ul className="list-color-product">
-//                                             {product.colour && (
-//                                                 <li className="list-color-item color-swatch">
-//                                                     <span className="tooltip">{product.colour.name}</span>
-//                                                     <span
-//                                                         className="swatch-value"
-//                                                         style={{ backgroundColor: product.colour.hex_code }}
-//                                                     ></span>
-//                                                 </li>
-//                                             )}
-//                                         </ul>
+// <ul className="list-color-product">
+//     {product.colour && (
+//         <li className="list-color-item color-swatch">
+//             <span className="tooltip">{product.colour.name}</span>
+//             <span
+//                 className="swatch-value"
+//                 style={{ backgroundColor: product.colour.hex_code }}
+//             ></span>
+//         </li>
+//     )}
+// </ul>
 //                                     </div>
 //                                 </div>
 //                             </div>
@@ -416,7 +416,7 @@
 //             </div>
 
 //             <QuickView product={selectedProduct} />
-       
+
 //         </section>
 //     );
 // }
@@ -664,9 +664,9 @@ function BestSeller() {
                                             </button>
 
                                             <button className="box-icon quickview style-2" onClick={() => handleQuickView(product)}>
-                                                <AiOutlineEye className="text-xl" />
+                                                <AiOutlineEye className="text-2xl" />
                                                 <span className="text">QUICK VIEW</span>
-                                            </button>
+                                            </button>    
                                         </div>
                                     </div>
 
@@ -675,7 +675,21 @@ function BestSeller() {
                                             {product.name}
                                         </Link>
                                         <span className="price">${product.price}</span>
+
+                                        <ul className="list-color-product">
+                                            {product.colour && (
+                                                <li className="list-color-item color-swatch">
+                                                    <span className="tooltip">{product.colour.name}</span>
+                                                    <span
+                                                        className="swatch-value"
+                                                        style={{ backgroundColor: product.colour.hex_code }}
+                                                    ></span>
+                                                </li>
+                                            )}
+                                        </ul>
                                     </div>
+
+
                                 </div>
                             </div>
                         ))}

@@ -21,7 +21,7 @@ function Index() {
       <BestSeller />
       <Store />
       {/* <Brand /> */}
-      <QuickAdd/>
+    
      
       <Compare />
 
