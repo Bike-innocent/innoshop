@@ -43,6 +43,7 @@ import Supplier from './pages/product/Supplier.jsx';
 import CreateProduct from './pages/product/CreateProduct.jsx';
 import ProductList from './pages/product/ProductList.jsx';
 import EditProduct from './pages/product/EditProduct.jsx';
+import CustomerOrders from './pages/product/order/CustomerOrders.jsx';
 
 const router = createBrowserRouter([
   {
@@ -83,6 +84,7 @@ const router = createBrowserRouter([
           { index: true, element: <Dashboard /> }, // Default to Dashboard component
           { path: 'product-category', element: <ProductCategory /> }, 
           { path: 'brand', element: <Brand /> }, 
+          { path: 'customer-orders', element: <CustomerOrders/> }, 
           { path: 'colour', element: <Colour /> }, 
           { path: 'size', element: <Size /> }, 
           { path: 'supplier', element: <Supplier /> }, 
@@ -102,7 +104,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      
     </QueryClientProvider>
+    
   );
 }
 
