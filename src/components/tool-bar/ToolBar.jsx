@@ -295,13 +295,13 @@ function ToolBar() {
                 </div>
 
                 <div className="toolbar-item">
-                    <a href="#shoppingCart" data-bs-toggle="modal">
+                    <Link to="/view-cart">
                         <div className="toolbar-icon">
                             <AiOutlineShoppingCart className="text-xl" />
                             <div className="toolbar-count">1</div>
                         </div>
                         <div className="toolbar-label">Cart</div>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -312,4 +312,3 @@ function ToolBar() {
 }
 
 export default ToolBar;
- 
