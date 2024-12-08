@@ -162,23 +162,140 @@
 
 
 
+// import React, { useState, useEffect } from "react";
+// import CheckOutSection from "./mini-component/CheckOutSection";
+
+// function ViewCart() {
+//   const [cart, setCart] = useState([]);
+
+//   useEffect(() => {
+//     window.scrollTo(0, 0); // Scroll to the top of the page
+//     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+//     setCart(storedCart);
+//   }, []);
+
+//   // Remove Item from Cart
+//   const handleRemove = (id) => {
+//     const updatedCart = cart.filter((item) => item.id !== id);
+//     setCart(updatedCart);
+//     localStorage.setItem("cart", JSON.stringify(updatedCart));
+//   };
+
+//   // Update Quantity
+//   const handleQuantityChange = (id, action) => {
+//     const updatedCart = cart.map((item) => {
+//       if (item.id === id) {
+//         return {
+//           ...item,
+//           quantity: action === "increment" ? item.quantity + 1 : Math.max(1, item.quantity - 1),
+//         };
+//       }
+//       return item;
+//     });
+//     setCart(updatedCart);
+//     localStorage.setItem("cart", JSON.stringify(updatedCart));
+//   };
+
+//   if (cart.length === 0) {
+//     return (
+//       <div className="tf-page-cart text-center mt_140 mb_200">
+//         <h5 className="mb_24">Your cart is empty</h5>
+//         <p className="mb_24">You may check out all the available products and buy some in the shop</p>
+//         <a href="/shop" className="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn">
+//           Return to shop<i className="icon icon-arrow1-top-left"></i>
+//         </a>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <section className="flat-spacing-11">
+//       <div className="container">
+//         <table className="tf-table-page-cart">
+//           <thead>
+//             <tr>
+//               <th>Product</th>
+//               <th>Price</th>
+//               <th>Quantity</th>
+//               <th>Total</th>
+//               <th>Action</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {cart.map((item) => (
+//               <tr key={item.id}>
+//                 <td className="tf-cart-item_product">
+//                   <img src={item.image} alt={item.name} width="80" />
+//                   <div>{item.name}</div>
+//                   <div>{item.color} / {item.size}</div>
+//                 </td>
+//                 <td>${item.price}</td>
+//                 <td>
+//                   <div className="cart-quantity">
+//                     <button onClick={() => handleQuantityChange(item.id, "decrement")}>-</button>
+//                     <input type="text" readOnly value={item.quantity} />
+//                     <button onClick={() => handleQuantityChange(item.id, "increment")}>+</button>
+//                   </div>
+//                 </td>
+//                 <td>${(item.price * item.quantity).toFixed(2)}</td>
+//                 <td>
+//                   <button onClick={() => handleRemove(item.id)} className="btn btn-danger">
+//                     Remove
+//                   </button>
+//                 </td>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//         <CheckOutSection cart={cart} />
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default ViewCart;
+
+
+
+
+
+
+
 import React, { useState, useEffect } from "react";
 import CheckOutSection from "./mini-component/CheckOutSection";
 
 function ViewCart() {
   const [cart, setCart] = useState([]);
+  const [cartTotalAmount, setCartTotalAmount] = useState(0); // State for total amount
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top of the page
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(storedCart);
+    updateCartCount(storedCart); // Update cart count on initial load
+    calculateTotalAmount(storedCart); // Calculate initial cart total
   }, []);
+
+  // Update cart count in localStorage and dispatch event
+  const updateCartCount = (updatedCart) => {
+    const totalItems = updatedCart.length; // Count number of unique products
+    localStorage.setItem("cartCount", totalItems);
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
+
+  // Calculate the cart total amount
+  const calculateTotalAmount = (cartItems) => {
+    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    setCartTotalAmount(total);
+  };
 
   // Remove Item from Cart
   const handleRemove = (id) => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
+    updateCartCount(updatedCart);
+    calculateTotalAmount(updatedCart);
   };
 
   // Update Quantity
@@ -194,6 +311,8 @@ function ViewCart() {
     });
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
+    updateCartCount(updatedCart);
+    calculateTotalAmount(updatedCart);
   };
 
   if (cart.length === 0) {
@@ -247,6 +366,12 @@ function ViewCart() {
             ))}
           </tbody>
         </table>
+        {/* Display the Cart Total Amount */}
+        <div className="text-end mt-4">
+          <h4>
+            Cart Total: <span className="fw-bold">${cartTotalAmount.toFixed(2)}</span>
+          </h4>
+        </div>
         <CheckOutSection cart={cart} />
       </div>
     </section>

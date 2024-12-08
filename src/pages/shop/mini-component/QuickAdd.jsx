@@ -112,33 +112,49 @@ function QuickAdd({ product }) {
 
   if (!product) return null;
 
+
+
   // Function to handle Add to Cart
+  
+
+
+
   const handleAddToCart = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const newProduct = {
-      id: product.id,
-      name: product.name,
-      image: product.primary_image?.image_path,
-      price: product.price,
-      color: product.colour.name,
-      size: product.size.name,
-      quantity,
-    };
-
-    const existingProductIndex = cart.findIndex((item) => item.id === product.id);
-
-    if (existingProductIndex !== -1) {
-      // Update quantity if product already exists
-      cart[existingProductIndex].quantity += quantity;
-    } else {
-      // Add new product
-      cart.push(newProduct);
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Product added to cart!");
+  const newProduct = {
+    id: product.id,
+    name: product.name,
+    image: product.primary_image?.image_path,
+    price: product.price,
+    color: product.colour.name,
+    size: product.size.name,
+    quantity,
   };
+
+  const existingProductIndex = cart.findIndex((item) => item.id === product.id);
+
+  if (existingProductIndex !== -1) {
+    // Update quantity if product already exists
+    cart[existingProductIndex].quantity += quantity;
+  } else {
+    // Add new product
+    cart.push(newProduct);
+  }
+
+  // Save the updated cart to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Calculate cart count: Only count unique products
+  const cartCount = cart.length;
+
+  // Update cart count in localStorage and dispatch an event
+  localStorage.setItem("cartCount", cartCount);
+  window.dispatchEvent(new Event("cartUpdated")); // Notify other components
+
+  alert("Product added to cart!");
+};
+
 
   // Quantity handlers
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
