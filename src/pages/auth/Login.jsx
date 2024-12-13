@@ -124,30 +124,87 @@ function Login() {
         setFormData({ ...formData, [name]: value });
     };
 
-    
+
+
+    // const handleLogin = async (e) => {
+    //     e.preventDefault();
+    //     setError('');
+
+    //     try {
+    //         const response = await axiosInstance.post('/login', {
+    //             email: formData.email,
+    //             password: formData.password,
+    //         });
+
+    //         // Save auth token to localStorage
+    //         localStorage.setItem('authToken', response.data.access_token);
+
+    //         // Set user as authenticated
+    //         localStorage.setItem('isAuthenticated', 'true');
+            
+    //         // Navigate to the desired page after login, e.g., dashboard
+    //         navigate('/');
+    //     } catch (err) {
+    //         setError(err.response?.data?.message || 'Login failed. Please try again.');
+    //     }
+    // };
+
+
+
+
+
+
 
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
-
+    
         try {
             const response = await axiosInstance.post('/login', {
                 email: formData.email,
                 password: formData.password,
             });
-
-            // Save auth token to localStorage
+    
+            // Save auth token and mark user as authenticated
             localStorage.setItem('authToken', response.data.access_token);
-
-            // Set user as authenticated
             localStorage.setItem('isAuthenticated', 'true');
-            
-            // Navigate to the desired page after login, e.g., dashboard
+    
+            // Sync local cart to server after successful login
+            await syncLocalCartToServer();
+    
+            // Clear local storage cart after syncing
+            localStorage.removeItem('cart');
+            localStorage.removeItem('cartCount');
+    
+            // Notify app of updated cart
+            window.dispatchEvent(new Event('cartUpdated'));
+    
+            // Navigate to the desired page
             navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || 'Login failed. Please try again.');
         }
     };
+    
+    // Function to Sync Local Cart to Server
+    const syncLocalCartToServer = async () => {
+        const localCart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        if (localCart.length > 0) {
+            try {
+                for (const item of localCart) {
+                    await axiosInstance.post('/cart', {
+                        product_id: item.id,
+                        quantity: item.quantity,
+                    });
+                }
+                console.log("Local cart synced successfully.");
+            } catch (error) {
+                console.error("Failed to sync cart to server:", error);
+            }
+        }
+    };
+    
 
     return (
         <section className="flat-spacing-10">

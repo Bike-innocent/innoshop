@@ -235,7 +235,7 @@ function Shop() {
     const { data: products, isLoading } = useQuery({
         queryKey: ['products'],
         queryFn: fetchProducts,
-        refetchOnWindowFocus: false,
+    
     });
 
     useEffect(() => {

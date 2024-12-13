@@ -1,252 +1,94 @@
 
 
 
-// import React from 'react'
-
-// function QuickAdd() {
-//   return (
-//     <>
-       
-//     <div class="modal fade modalDemo" id="quick_add">
-//         <div class="modal-dialog modal-dialog-centered">
-//             <div class="modal-content">
-//                 <div class="header">
-//                     <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
-//                 </div>
-//                 <div class="wrap">
-//                     <div class="tf-product-info-item">
-//                         <div class="image">
-//                             <img src="assets/images/products/orange-1.jpg" alt=""/>
-//                         </div>
-//                         <div class="content">
-//                             <a href="product-detail.html">Ribbed Tank Top</a>
-//                             <div class="tf-product-info-price">
-                                
-//                                 <div class="price">$18.00</div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <div class="tf-product-info-variant-picker mb_15">
-//                         <div class="variant-picker-item">
-//                             <div class="variant-picker-label">
-//                                 Color: <span class="fw-6 variant-picker-label-value">Orange</span>
-//                             </div>
-//                             <div class="variant-picker-values">
-//                                 <input id="values-orange" type="radio" name="color" checked/>
-//                                 <label class="hover-tooltip radius-60" for="values-orange" data-value="Orange">
-//                                     <span class="btn-checkbox bg-color-orange"></span>
-//                                     <span class="tooltip">Orange</span>
-//                                 </label>
-                               
-//                             </div>
-//                         </div>
-//                         <div class="variant-picker-item">
-//                             <div class="variant-picker-label">
-//                                 Size: <span class="fw-6 variant-picker-label-value">S</span>
-//                             </div>
-//                             <div class="variant-picker-values">
-//                                 <input type="radio" name="size" id="values-s" checked/>
-//                                 <label class="style-text" for="values-s" data-value="S">
-//                                     <p>S</p>
-//                                 </label>
-                               
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <div class="tf-product-info-quantity mb_15">
-//                         <div class="quantity-title fw-6">Quantity</div>
-//                         <div class="wg-quantity">
-//                             <span class="btn-quantity minus-btn">-</span>
-//                             <input type="text" name="number" value="1"/>
-//                             <span class="btn-quantity plus-btn">+</span>
-//                         </div>
-//                     </div>
-//                     <div class="tf-product-info-buy-button">
-//                         <form class="">
-//                             <a href="#" class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn "><span>Add to cart -&nbsp;</span><span class="tf-qty-price">$18.00</span></a>
-//                             <div class="tf-product-btn-wishlist btn-icon-action">
-//                                 <i class="icon-heart"></i>
-//                                 <i class="icon-delete"></i>
-//                             </div>
-//                             <a href="#compare" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" class="tf-product-btn-wishlist box-icon bg_white compare btn-icon-action">
-//                                 <span class="icon icon-compare"></span>
-//                                 <span class="icon icon-check"></span>
-//                             </a>
-//                             <div class="w-100">
-//                                 <a href="#" class="btns-full">Buy with <img src="assets/images/payments/paypal.png" alt=""/></a>
-//                                 <a href="#" class="payment-more-option">More payment options</a>
-//                             </div>
-//                         </form>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-
-//     </>
-//   )
-// }
-
-// export default QuickAdd
-
-
-
-
-
-
-// import React from 'react';
-
-// function QuickAdd({ product }) {
-//     if (!product) return null;
-
-//     return (
-//         <div className="modal fade modalDemo" id="quick_add">
-//             <div className="modal-dialog modal-dialog-centered">
-//                 <div className="modal-content">
-//                     <div className="header">
-//                         <span className="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
-//                     </div>
-//                     <div className="wrap">
-//                         <div className="tf-product-info-item">
-//                             <div className="image">
-//                                 <img src={product.primary_image?.image_path} alt={product.name} />
-//                             </div>
-//                             <div className="content">
-//                                 <a href={`/product/${product.slug}`}>{product.name}</a>
-//                                 <div className="tf-product-info-price">
-//                                     <div className="price">${product.price}</div>
-//                                 </div>
-//                             </div>
-//                         </div>
-
-//                         {/* Variant Picker Section */}
-//                         <div className="tf-product-info-variant-picker mb_15">
-//                             <div className="variant-picker-item">
-//                                 <div className="variant-picker-label">
-//                                     Color: <span className="fw-6 variant-picker-label-value">{product.colour.name}</span>
-//                                 </div>
-//                                 <div className="variant-picker-values">
-//                                     <input id="values-orange" type="radio" name="color" defaultChecked />
-//                                     <label className="hover-tooltip radius-60" >
-//                                         <span className="btn-checkbox "  style={{ backgroundColor: product.colour.hex_code }}></span>
-//                                         <span className="tooltip">{product.colour.name}</span>
-//                                     </label>
-//                                 </div>
-//                             </div>
-//                             <div className="variant-picker-item">
-//                                 <div className="variant-picker-label">
-//                                     Size: <span className="fw-6 variant-picker-label-value">{product.size.name}</span>
-//                                 </div>
-//                                 <div className="variant-picker-values">
-//                                     <input type="radio" name="size" id="values-s" defaultChecked />
-//                                     <label className="style-text" htmlFor="values-s" data-value="S">
-//                                         <p>{product.size.name}</p>
-//                                     </label>
-//                                 </div>
-//                             </div>
-//                         </div>
-
-//                         {/* Quantity Selector */}
-//                         <div className="tf-product-info-quantity mb_15">
-//                             <div className="quantity-title fw-6">Quantity</div>
-//                             <div className="wg-quantity">
-//                                 <span className="btn-quantity minus-btn">-</span>
-//                                 <input type="text" name="number" defaultValue="1" />
-//                                 <span className="btn-quantity plus-btn">+</span>
-//                             </div>
-//                         </div>
-
-//                         {/* Action Buttons */}
-//                         <div className="tf-product-info-buy-button">
-//                             <form>
-//                                 <a href="#" className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn">
-//                                     <span>Add to cart -&nbsp;</span>
-//                                     <span className="tf-qty-price">${product.price}</span>
-//                                 </a>
-//                                 <div className="tf-product-btn-wishlist btn-icon-action">
-//                                     <i className="icon-heart"></i>
-//                                     <i className="icon-delete"></i>
-//                                 </div>
-//                                 <a
-//                                     href="#compare"
-//                                     data-bs-toggle="offcanvas"
-//                                     aria-controls="offcanvasLeft"
-//                                     className="tf-product-btn-wishlist box-icon bg_white compare btn-icon-action"
-//                                 >
-//                                     <span className="icon icon-compare"></span>
-//                                     <span className="icon icon-check"></span>
-//                                 </a>
-//                                 <div className="w-100">
-//                                     <a href="#" className="btns-full">
-//                                         Buy with <img src="assets/images/payments/paypal.png" alt="PayPal" />
-//                                     </a>
-//                                     <a href="#" className="payment-more-option">
-//                                         More payment options
-//                                     </a>
-//                                 </div>
-//                             </form>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default QuickAdd;
-
-
-
-
-
 
 import React, { useState } from "react";
 import axios from "../../../axiosInstance"; // Axios instance for API calls
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useQueryClient } from "@tanstack/react-query"; // Import queryClient
 
 function QuickAdd({ product }) {
   const [quantity, setQuantity] = useState(1);
+  const queryClient = useQueryClient(); // QueryClient for React Query
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
-  if (!product) return null;
+  if (!product) return null; // Safeguard if no product exists
 
-  // Handle Add to Cart
-  const handleAddToCart = async () => {
+  const handleAddToCart = async (e) => {
+    e.preventDefault(); // Prevent page refresh
+    const modalElement = document.getElementById("quick_add"); // Get modal element
+
     if (isAuthenticated) {
       try {
+        // Send product data to API
         await axios.post("/cart", {
           product_id: product.id,
           quantity,
         });
-        alert("Product added to cart!");
-        window.dispatchEvent(new Event("cartUpdated"));
+
+        // Display success toast
+        toast.success("Product added to cart!", { 
+          position: "top-right", 
+          autoClose: 3000, // Toast lasts for 3 seconds
+          hideProgressBar: true, // Hides the progress bar
+        });
+        
+
+        // Invalidate React Query cache for cart updates
+        queryClient.invalidateQueries(["cart"]);
+
+        // Close the modal
+        bootstrap.Modal.getInstance(modalElement)?.hide();
       } catch (error) {
-        console.error("Error adding product to cart", error);
-        alert("Failed to add product to cart.");
+        console.error("Error adding product to cart:", error);
+
+        // Check for specific API error
+        const errorMessage =
+          error.response?.data?.message || "Failed to add product to cart.";
+        toast.error(errorMessage, { position: "top-right" });
       }
     } else {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      try {
+        // Local storage handling for unauthenticated users
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const newProduct = {
+          id: product.id,
+          name: product.name,
+          image: product.primary_image?.image_path,
+          price: product.price,
+          color: product.colour.name,
+          size: product.size.name,
+          slug: product.slug,
+          quantity,
+        };
 
-      const newProduct = {
-        id: product.id,
-        name: product.name,
-        image: product.primary_image?.image_path,
-        price: product.price,
-        color: product.colour.name,
-        size: product.size.name,
-        quantity,
-      };
+        // Update cart locally
+        const existingProductIndex = cart.findIndex((item) => item.id === product.id);
+        if (existingProductIndex !== -1) {
+          cart[existingProductIndex].quantity += quantity;
+        } else {
+          cart.push(newProduct);
+        }
 
-      const existingProductIndex = cart.findIndex((item) => item.id === product.id);
-      if (existingProductIndex !== -1) {
-        cart[existingProductIndex].quantity += quantity;
-      } else {
-        cart.push(newProduct);
+        // Update localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("cartCount", cart.length);
+
+        // Dispatch custom event to update cart count
+        window.dispatchEvent(
+          new CustomEvent("cartUpdated", { detail: { count: cart.length } })
+        );
+
+        // Display success toast
+        toast.success("Product added to cart!", { position: "top-right" });
+
+        // Close the modal
+        bootstrap.Modal.getInstance(modalElement)?.hide();
+      } catch (error) {
+        console.error("Error updating local cart:", error);
+        toast.error("Failed to update cart locally.", { position: "top-right" });
       }
-
-      localStorage.setItem("cart", JSON.stringify(cart));
-      localStorage.setItem("cartCount", cart.length);
-      window.dispatchEvent(new Event("cartUpdated"));
-      alert("Product added to cart!");
     }
   };
 
@@ -254,28 +96,35 @@ function QuickAdd({ product }) {
   const decrementQuantity = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   return (
-    <div className="modal fade modalDemo" id="quick_add">
-      <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content">
-          <div className="header">
-            <span className="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
-          </div>
-          <div className="wrap">
-            {/* Product Info */}
-            <div className="tf-product-info-item">
-              <div className="image">
-                <img src={product.primary_image?.image_path} alt={product.name} />
-              </div>
-              <div className="content">
-                <a href={`/product/${product.slug}`}>{product.name}</a>
-                <div className="tf-product-info-price">
-                  <div className="price">${product.price}</div>
+    <>
+      <ToastContainer /> {/* Toast Container for displaying notifications */}
+      <div className="modal fade modalDemo" id="quick_add">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="header">
+              <span
+                className="icon-close icon-close-popup bg-red-500"
+                data-bs-dismiss="modal"
+              ></span>
+            </div>
+            <div className="wrap">
+              {/* Product Info */}
+              <div className="tf-product-info-item">
+                <div className="image">
+                  <img src={product.primary_image?.image_path} alt={product.name} />
+                </div>
+                <div className="content">
+                  <a href={`/product/${product.slug}`}>{product.name}</a>
+                  <div className="tf-product-info-price">
+                    <div className="price">${product.price}</div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Variant Picker Section */}
-            <div className="tf-product-info-variant-picker mb_15">
+              {/* Variant Picker */}
+              <div className="tf-product-info-variant-picker mb_15">
+
+                
               <div className="variant-picker-item">
                 <div className="variant-picker-label">
                   Color: <span className="fw-6 variant-picker-label-value">{product.colour.name}</span>
@@ -291,33 +140,34 @@ function QuickAdd({ product }) {
                   </label>
                 </div>
               </div>
-              <div className="variant-picker-item">
-                <div className="variant-picker-label">
-                  Size: <span className="fw-6 variant-picker-label-value">{product.size.name}</span>
-                </div>
-                <div className="variant-picker-values">
-                  <input type="radio" name="size" id="values-s" defaultChecked />
-                  <label className="style-text" htmlFor="values-s" data-value="S">
-                    <p>{product.size.name}</p>
-                  </label>
+
+
+
+                <div className="variant-picker-item">
+                  <div className="variant-picker-label">
+                    Size:{" "}
+                    <span className="fw-6 variant-picker-label-value">
+                      {product.size.name}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Quantity Selector */}
-            <div className="tf-product-info-quantity mb_15">
-              <div className="quantity-title fw-6">Quantity</div>
-              <div className="wg-quantity">
-                <span className="btn-quantity minus-btn" onClick={decrementQuantity}>
-                  -
-                </span>
-                <input type="text" readOnly value={quantity} />
-                <span className="btn-quantity plus-btn" onClick={incrementQuantity}>
-                  +
-                </span>
+              {/* Quantity Selector */}
+              <div className="tf-product-info-quantity mb_15">
+                <div className="quantity-title fw-6">Quantity</div>
+                <div className="wg-quantity">
+                  <span className="btn-quantity minus-btn" onClick={decrementQuantity}>
+                    -
+                  </span>
+                  <input type="text" readOnly value={quantity} />
+                  <span className="btn-quantity plus-btn" onClick={incrementQuantity}>
+                    +
+                  </span>
+                </div>
               </div>
-            </div>
 
+              {/* Add to Cart */}
             <div className="tf-product-info-buy-button">
               <form>
                 <button
@@ -350,15 +200,19 @@ function QuickAdd({ product }) {
                     More payment options
                   </a>
                 </div>
+
+
               </form>
             </div>
 
+
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
 export default QuickAdd;
-
