@@ -10,6 +10,8 @@ import MainOffCanvas from './MainOffCanvas';
 import { AuthUser } from '../../service/AuthUser';
 import { FiSearch, FiUser, FiHeart } from 'react-icons/fi';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import useCart from '../../hooks/useCart'; // Import the custom hook
+
 
 
 
@@ -19,6 +21,7 @@ function Header() {
   const mainOffcanvasRef = useRef(null);
   const searchOffcanvasRef = useRef(null);
   const navigate = useNavigate();
+  const { cart } = useCart();
 
   // Fetch user data with the custom hook
   const { data: user, isLoading, isError } = AuthUser();
@@ -109,20 +112,28 @@ function Header() {
               <li className="nav-wishlist">
                 <Link to="/wishlist" className="nav-icon-item">
                   <FiHeart className="text-xl" />
-                  <span className="count-box">0</span>
+                  {/* <span className="count-box">0</span> */}
                 </Link>
+                
               </li>
-             
+
 
 
               <li className="nav-cart">
                 <a href="#shoppingCart" data-bs-toggle="modal" className="nav-icon-item">
                   <AiOutlineShoppingCart className="text-2xl" />
-                  <span className="count-box">10</span>
+
+                  {cart.length > 0 && (
+
+                    <span className="count-box">{cart.length}</span>
+                  )}
+
+                  
+
                 </a>
               </li>
 
-              
+
 
 
             </ul>
@@ -139,3 +150,109 @@ function Header() {
 }
 
 export default Header;
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { Link, useNavigate } from 'react-router-dom';
+// import { Offcanvas } from 'bootstrap';
+// import SearchOffCanvas from './SearchOffCanvas';
+// import MainOffCanvas from './MainOffCanvas';
+// import { FiSearch, FiUser, FiHeart } from 'react-icons/fi';
+// import { AiOutlineShoppingCart } from 'react-icons/ai';
+// import useCart from '../../hooks/useCart'; // Import the custom hook
+
+// function Header() {
+//   const [isVisible, setIsVisible] = useState(true);
+//   const [lastScrollPosition, setLastScrollPosition] = useState(0);
+//   const mainOffcanvasRef = useRef(null);
+//   const searchOffcanvasRef = useRef(null);
+//   const navigate = useNavigate();
+
+//   // Use the custom cart hook
+//   const { cart } = useCart();
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const currentScrollPosition = window.pageYOffset;
+//       setIsVisible(currentScrollPosition < lastScrollPosition);
+//       setLastScrollPosition(currentScrollPosition);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, [lastScrollPosition]);
+
+//   const toggleMainOffcanvas = () => {
+//     const bsOffcanvas =
+//       Offcanvas.getInstance(mainOffcanvasRef.current) ||
+//       new Offcanvas(mainOffcanvasRef.current);
+//     bsOffcanvas.toggle();
+//   };
+
+//   const toggleSearchOffcanvas = () => {
+//     const bsOffcanvas =
+//       Offcanvas.getInstance(searchOffcanvasRef.current) ||
+//       new Offcanvas(searchOffcanvasRef.current);
+//     bsOffcanvas.toggle();
+//   };
+
+//   return (
+//     <header className={`header-default shadow-md fixed top-0 left-0 right-0 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+//       <div className="px_15 lg-px_40">
+//         <div className="flex wrapper-header align-items-center">
+//           <div className="w-1/3 tf-lg-hidden">
+//             <button onClick={toggleMainOffcanvas} className="text-xl font-bold">
+//               {/* Main Offcanvas Trigger */}
+//               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="none">
+//                 <path d="M2.00056 2.28571H16.8577..." fill="currentColor"></path>
+//               </svg>
+//             </button>
+//           </div>
+
+//           {/* Logo */}
+//           <div className="flex items-center justify-center w-1/3">
+//             <Link to="/" className="text-2xl font-bold">Logo</Link>
+//           </div>
+
+//           {/* Toolbar */}
+//           <div className="flex justify-end w-1/3">
+//             <div onClick={toggleSearchOffcanvas} className="mx-3 cursor-pointer">
+//               <FiSearch className="text-xl" />
+//             </div>
+
+//             <Link to="/account" className="mx-3">
+//               <FiUser className="text-xl" />
+//             </Link>
+
+//             <Link to="/wishlist" className="mx-3 relative">
+//               <FiHeart className="text-xl" />
+//               <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-1 text-xs">0</span>
+//             </Link>
+
+//             <Link to="/view-cart" className="mx-3 relative">
+//               <AiOutlineShoppingCart className="text-xl" />
+//               {/* Cart Count */}
+//               {cart.length > 0 && (
+//                 <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-1 text-xs">
+//                   {cart.length}
+//                 </span>
+//               )}
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* OffCanvas Components */}
+//       <SearchOffCanvas offcanvasRef={searchOffcanvasRef} />
+//       <MainOffCanvas offcanvasRef={mainOffcanvasRef} />
+//     </header>
+//   );
+// }
+
+// export default Header;

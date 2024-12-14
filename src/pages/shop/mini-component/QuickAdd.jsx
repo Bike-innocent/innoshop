@@ -566,7 +566,7 @@ function QuickAdd({ product }) {
         toast.success("Product added to cart!", { 
           position: "top-right", 
           autoClose: 3000, // Toast lasts for 3 seconds
-          hideProgressBar: true, // Hides the progress bar
+         
         });
         
 
