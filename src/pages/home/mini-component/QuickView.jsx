@@ -345,7 +345,7 @@ function QuickView({ product }) {
                                     </div>
                                 </div>
                                 <div className="tf-product-info-price">
-                                    <div className="price">${product.price}</div>
+                                    <div className="price">₦{product.price}</div>
                                 </div>
                                 <div className="tf-product-description">
                                     <p>{product.description}</p>

@@ -651,7 +651,7 @@ function QuickAdd({ product }) {
                 <div className="content">
                   <a href={`/product/${product.slug}`}>{product.name}</a>
                   <div className="tf-product-info-price">
-                    <div className="price">${product.price}</div>
+                    <div className="price">₦{product.price}</div>
                   </div>
                 </div>
               </div>
@@ -710,7 +710,7 @@ function QuickAdd({ product }) {
                   className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
                 >
                   <span>Add to cart -&nbsp;</span>
-                  <span className="tf-qty-price">${(product.price * quantity).toFixed(2)}</span>
+                  <span className="tf-qty-price">₦{(product.price * quantity).toFixed(2)}</span>
                 </button>
 
 

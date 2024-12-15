@@ -366,7 +366,7 @@ function Shop() {
                                         {/* Product Info */}
                                         <div className="card-product-info">
                                             <Link to={`/product/${product.slug}`} className="title link">{product.name}</Link>
-                                            <span className="price">${product.price}</span>
+                                            <span className="price">₦{product.price}</span>
                                             <ul className="list-color-product">
                                                 <li className="list-color-item color-swatch active">
                                                     <span className="tooltip">{product.colour?.name}</span>

@@ -246,6 +246,7 @@
 
 
 import React from 'react'
+import AddToCart from './AddToCart';
 
 function Details({ product }) {
     return (
@@ -268,7 +269,7 @@ function Details({ product }) {
                             </div>
                         </div>
                         <div class="tf-product-info-price">
-                        <div className="price-on-sale">${product.price}</div>
+                        <div className="price-on-sale">₦{product.price}</div>
                            
                         </div>
                        
@@ -303,33 +304,15 @@ function Details({ product }) {
                                 </div>
                             </div>
                         </div>
-                        <div class="tf-product-info-quantity">
-                            <div class="quantity-title fw-6">Quantity</div>
-                            <div class="wg-quantity">
-                                <span class="btn-quantity minus-btn">-</span>
-                                <input type="text" name="number" value="1" />
-                                <span class="btn-quantity plus-btn">+</span>
-                            </div>
-                        </div>
-                        <div class="tf-product-info-buy-button">
-                            <form class="">
-                                <a href="#" class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn "><span>Add to cart -&nbsp;</span><span class="tf-qty-price">${product.price}</span></a>
-                                <a href="javascript:void(0);" class="tf-product-btn-wishlist hover-tooltip box-icon bg_white wishlist btn-icon-action">
-                                    <span class="icon icon-heart"></span>
-                                    <span class="tooltip">Add to Wishlist</span>
-                                    <span class="icon icon-delete"></span>
-                                </a>
-                                <a href="#compare" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" class="tf-product-btn-wishlist hover-tooltip box-icon bg_white compare btn-icon-action">
-                                    <span class="icon icon-compare"></span>
-                                    <span class="tooltip">Add to Compare</span>
-                                    <span class="icon icon-check"></span>
-                                </a>
-                                <div class="w-100">
-                                    <a href="#" class="btns-full">Buy with <img src="assets/images/payments/paypal.png" alt="" /></a>
-                                    <a href="#" class="payment-more-option">More payment options</a>
-                                </div>
-                            </form>
-                        </div>
+
+
+
+
+                        <AddToCart product={product}/>
+
+
+
+
                         <div class="tf-product-info-extra-link">
                             <a href="#compare_color" data-bs-toggle="modal" class="tf-product-extra-icon">
                                 <div class="icon">
@@ -401,64 +384,3 @@ export default Details
 
 
 
-
-
-
-
-
-
-// // Details.jsx
-// import React from 'react';
-
-// function Details({ product }) {
-//   return (
-//     <div className="col-md-6">
-//       <div className="tf-product-info-wrap position-relative">
-//         <div className="tf-product-info-title">
-//           <h5>{product.name}</h5>
-//         </div>
-        
-//         {/* Display product badges and status */}
-//         <div className="tf-product-info-badges">
-//           <div className="badges">Best seller</div>
-//           <div className="product-status-content">
-//             <i className="icon-lightning"></i>
-//             <p className="fw-6">Selling fast! {product.popularity} people have this in their carts.</p>
-//           </div>
-//         </div>
-
-//         {/* Display price */}
-//         <div className="tf-product-info-price">
-//           <div className="price-on-sale">${product.price}</div>
-//         </div>
-
-//         {/* Display color and size options */}
-//         <div className="tf-product-info-variant-picker">
-//           <div className="variant-picker-item">
-//             <div className="variant-picker-label">Color: <span className="fw-6">{product.colour?.name}</span></div>
-//           </div>
-//           <div className="variant-picker-item">
-//             <div className="variant-picker-label">Size: <span className="fw-6">{product.size?.name}</span></div>
-//           </div>
-//         </div>
-
-//         {/* Quantity selector */}
-//         <div className="tf-product-info-quantity">
-//           <div className="quantity-title fw-6">Quantity</div>
-//           <div className="wg-quantity">
-//             <span className="btn-quantity minus-btn">-</span>
-//             <input type="text" name="number" value="1" readOnly />
-//             <span className="btn-quantity plus-btn">+</span>
-//           </div>
-//         </div>
-
-//         {/* Add to cart button */}
-//         <div className="tf-product-info-buy-button">
-//           <a href="#" className="tf-btn btn-fill justify-content-center fw-6">Add to cart - ${product.price}</a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Details;

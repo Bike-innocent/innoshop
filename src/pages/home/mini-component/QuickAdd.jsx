@@ -31,7 +31,7 @@ function QuickAdd({ product }) {
         toast.success("Product added to cart!", { 
           position: "top-right", 
           autoClose: 3000, // Toast lasts for 3 seconds
-          hideProgressBar: true, // Hides the progress bar
+         
         });
         
 
@@ -175,7 +175,7 @@ function QuickAdd({ product }) {
                   className="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn"
                 >
                   <span>Add to cart -&nbsp;</span>
-                  <span className="tf-qty-price">${(product.price * quantity).toFixed(2)}</span>
+                  <span className="tf-qty-price">₦{(product.price * quantity).toFixed(2)}</span>
                 </button>
 
 

@@ -643,8 +643,8 @@ function BestSeller() {
                                 <div className="card-product style-2">
                                     <div className="card-product-wrapper">
                                         <Link to={`/product/${product.slug}`} className="product-img">
-                                            <img className="lazyload img-product" src={product.primary_image?.image_path} alt={product.name} />
-                                            <img className="lazyload img-hover" src={product.images[0]?.image_path || product.images[1]?.image_path} alt={product.name} />
+                                            <img className="lazyload img-product shadow" src={product.primary_image?.image_path} alt={product.name} />
+                                            <img className="lazyload img-hover shadow" src={product.images[0]?.image_path || product.images[1]?.image_path} alt={product.name} />
                                         </Link>
                                         <div className="list-product-btn column-left">
                                             <button className="box-icon wishlist bg_white btn-icon-action">
@@ -658,14 +658,14 @@ function BestSeller() {
                                         </div>
 
                                         <div className="list-product-btn absolute-3">
-                                            <button className="box-icon quick-add style-2" onClick={() => handleQuickAdd(product)}>
+                                            <button className="box-icon quick-add " onClick={() => handleQuickAdd(product)}>
                                                 <AiOutlineShoppingCart className="text-xl" />
-                                                <span className="text">QUICK ADD</span>
+                                              
                                             </button>
 
-                                            <button className="box-icon quickview style-2" onClick={() => handleQuickView(product)}>
+                                            <button className="box-icon quickview " onClick={() => handleQuickView(product)}>
                                                 <AiOutlineEye className="text-2xl" />
-                                                <span className="text">QUICK VIEW</span>
+                                              
                                             </button>    
                                         </div>
                                     </div>
@@ -674,7 +674,7 @@ function BestSeller() {
                                         <Link to={`/product/${product.slug}`} className="title link">
                                             {product.name}
                                         </Link>
-                                        <span className="price">${product.price}</span>
+                                        <span className="price">₦{product.price}</span>
 
                                         <ul className="list-color-product">
                                             {product.colour && (

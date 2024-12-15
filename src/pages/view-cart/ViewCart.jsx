@@ -375,7 +375,7 @@ function ViewCart() {
                                                     </span>
                                                 </div>
                                             </td>
-                                            <td className="tf-cart-item_price">${item.price}</td>
+                                            <td className="tf-cart-item_price">₦{item.price}</td>
 
                                             <td className="tf-cart-item_quantity" cart-data-title="Quantity">
                                                     <div className="cart-quantity">
@@ -419,23 +419,17 @@ function ViewCart() {
 
 
 
-                                            <td className="tf-cart-item_total">${(item.price * item.quantity).toFixed(2)}</td>
+                                            <td className="tf-cart-item_total">₦{(item.price * item.quantity).toFixed(2)}</td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
-                            <div className="text-end mt-4">
-                                <h4>
-                                    Cart Total: <span className="fw-bold">${cartTotalAmount.toFixed(2)}</span>
-                                </h4>
-                            </div>
-                            <div className="tf-page-cart-note">
-                                <label htmlFor="cart-note">Add Order Note</label>
-                                <textarea name="note" id="cart-note" placeholder="How can we help you?"></textarea>
-                            </div>
+                           
+                          
                         </form>
                     </div>
-                    <CheckOutSection />
+                    <CheckOutSection subTotal={cartTotalAmount.toFixed(2)} />
+
                 </div>
             </div>
         </section>

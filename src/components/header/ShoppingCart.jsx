@@ -261,7 +261,7 @@ function ShoppingCart() {
                                     <span style={{ width: '50%' }}></span>
                                 </div>
                                 <div class="tf-progress-msg">
-                                    Buy <span class="price fw-6">$75.00</span> more to enjoy <span class="fw-6">Free Shipping</span>
+                                    Buy <span class="price fw-6">₦500.00</span> more to enjoy <span class="fw-6">Free Shipping</span>
                                 </div>
                             </div>
 
@@ -312,7 +312,7 @@ function ShoppingCart() {
                                                             <div className="meta-variant">
                                                                 {item.color} / {item.size}
                                                             </div>
-                                                            <div className="price fw-6">${item.price}</div>
+                                                            <div className="price fw-6">₦{item.price}</div>
                                                             <div className="tf-mini-cart-btns">
                                                                 <div className="wg-quantity small">
                                                                     <span
@@ -371,7 +371,7 @@ function ShoppingCart() {
                                     <div class="tf-mini-cart-bottom-wrap">
                                         <div class="tf-cart-totals-discounts">
                                             <div class="tf-cart-total">Subtotal</div>
-                                            <div class="tf-totals-total-value fw-6"> ${cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)} USD</div>
+                                            <div class="tf-totals-total-value fw-6"> ₦{cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)} USD</div>
                                         </div>
                                         <div class="tf-cart-tax">Taxes and <a href="#">shipping</a> calculated at checkout</div>
                                         <div class="tf-mini-cart-line"></div>
