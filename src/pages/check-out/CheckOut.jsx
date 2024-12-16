@@ -208,7 +208,7 @@ function CheckOut() {
     }, []);
   
     if (isLoading) {
-      return <p>Loading cart...</p>;
+      return <p>loading...</p>;
     }
   
     if (isError) {
@@ -255,7 +255,7 @@ function CheckOut() {
                                                 </span>
                                                 )}
                                             </div>
-                                            <p class="">₦{ product.price * product.quantity}</p>
+                                            <p class="">₦{(product.price * product.quantity).toFixed(2)}</p>
                                         </div>
                                     </li>
                                    
@@ -263,7 +263,7 @@ function CheckOut() {
                                 </ul>
 
 
-                                <div class="coupon-box">
+                                <div class="coupon-box mt-4">
                                     <input type="text" placeholder="Discount code"/>
                                     <a href="#" class="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn">Apply</a>
                                 </div>

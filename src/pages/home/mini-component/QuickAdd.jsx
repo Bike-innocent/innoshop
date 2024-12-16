@@ -1,8 +1,7 @@
 
 
 
-
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import axios from "../../../axiosInstance"; // Axios instance for API calls
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,7 +12,14 @@ function QuickAdd({ product }) {
   const queryClient = useQueryClient(); // QueryClient for React Query
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
+  useEffect(() => {
+    setQuantity(1);
+  }, [product]);
+
   if (!product) return null; // Safeguard if no product exists
+
+
+  
 
   const handleAddToCart = async (e) => {
     e.preventDefault(); // Prevent page refresh
@@ -95,6 +101,11 @@ function QuickAdd({ product }) {
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
   const decrementQuantity = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
+
+
+
+
+
   return (
     <>
       <ToastContainer /> {/* Toast Container for displaying notifications */}
@@ -116,7 +127,7 @@ function QuickAdd({ product }) {
                 <div className="content">
                   <a href={`/product/${product.slug}`}>{product.name}</a>
                   <div className="tf-product-info-price">
-                    <div className="price">${product.price}</div>
+                    <div className="price">₦{product.price}</div>
                   </div>
                 </div>
               </div>

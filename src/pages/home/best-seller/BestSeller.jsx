@@ -633,7 +633,7 @@ function BestSeller() {
                 </div>
 
                 {loading ? (
-                    <p>Loading products...</p>
+                    <p> </p>
                 ) : error ? (
                     <p className="text-red-500">{error}</p>
                 ) : (
