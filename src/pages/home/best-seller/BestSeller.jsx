@@ -528,8 +528,8 @@ import { Link } from 'react-router-dom';
 import { AiOutlineHeart, AiFillHeart, AiOutlineShoppingCart, AiOutlineEye, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { HiOutlineArrowsExpand } from 'react-icons/hi';
 import axiosInstance from '../../../axiosInstance';
-import QuickView from '../mini-component/QuickView';
-import QuickAdd from '../mini-component/QuickAdd';
+import QuickAdd from '../../../components/QuickAdd';
+import QuickView from '../../../components/QuickView';
 
 function BestSeller() {
     const scrollContainerRef = useRef(null);
@@ -538,8 +538,10 @@ function BestSeller() {
     const [error, setError] = useState(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
-    const [selectedProduct, setSelectedProduct] = useState(null); // For Quick View
+    const [productForQuickView, setProductForQuickView] = useState(null); // For Quick View
     const [productForQuickAdd, setProductForQuickAdd] = useState(null); // For Quick Add
+    const [isQuickAddOpen, setIsQuickAddOpen] = useState(false); // Modal control state
+    const [isQuickViewOpen, setIsQuickViewOpen] = useState(false); // Modal control state
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -598,20 +600,27 @@ function BestSeller() {
     }, []);
 
     const handleQuickView = (product) => {
-        setSelectedProduct(product);
-        const modal = new window.bootstrap.Modal(document.getElementById('quick_view'));
-        modal.show();
+        setProductForQuickView(product);
+        setIsQuickViewOpen(true); // Open Quick View modal
     };
+
+    const closeQuickView = () => {
+        setIsQuickViewOpen(false); // Close Quick View modal
+    };
+
 
     const handleQuickAdd = (product) => {
         setProductForQuickAdd(product);
-        const modal = new window.bootstrap.Modal(document.getElementById('quick_add'));
-        modal.show();
+        setIsQuickAddOpen(true); // Open Quick Add modal
     };
 
+    const closeQuickAdd = () => {
+        setIsQuickAddOpen(false); // Close Quick Add modal
+    };
     return (
         <section className="flat-spacing-2 pt_0">
             <div className="container">
+               
                 <div className="flat-title flex-row justify-between px-0">
                     <span className="title">Best Seller</span>
                     <div className="flex space-x-2">
@@ -697,8 +706,14 @@ function BestSeller() {
                 )}
             </div>
 
-            <QuickView product={selectedProduct} />
-            <QuickAdd product={productForQuickAdd} />
+            <QuickAdd
+                product={productForQuickAdd}
+                isOpen={isQuickAddOpen}
+                onClose={closeQuickAdd}
+            />
+            <QuickView product={productForQuickView}
+             isOpen={isQuickViewOpen}
+             onClose={closeQuickView} />
         </section>
     );
 }

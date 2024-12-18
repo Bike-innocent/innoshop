@@ -333,13 +333,13 @@ function ShoppingCart() {
                                                                         +
                                                                     </span>
                                                                 </div>
-                                                                <span
+                                                                <a
                                                                    
-                                                                    className="underline text-sm text-red-500"
+                                                                    className="hover:underline text-sm text-red-500"
                                                                     onClick={() => removeItemMutation.mutate(item.id)}
                                                                 >
                                                                     Remove
-                                                                </span>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
