@@ -44,6 +44,8 @@ import CreateProduct from './pages/product/CreateProduct.jsx';
 import ProductList from './pages/product/ProductList.jsx';
 import EditProduct from './pages/product/EditProduct.jsx';
 import CustomerOrders from './pages/product/order/CustomerOrders.jsx';
+import AllUser from './pages/all-user/AllUser.jsx';
+import UserAddress from './pages/all-user/UserAddress.jsx';
 
 const router = createBrowserRouter([
   {
@@ -91,6 +93,8 @@ const router = createBrowserRouter([
           { path: 'create-product', element: <CreateProduct /> }, 
           { path: 'product-list', element: <ProductList/> }, 
           { path: 'edit-product/:slug', element: <EditProduct/> }, 
+          { path: 'all-users', element: <AllUser/> }, 
+          { path: 'user-addresses', element: <UserAddress/> }, 
        
         ],
       },

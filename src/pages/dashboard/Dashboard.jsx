@@ -13,7 +13,7 @@ function Dashboard() {
             <section className="flat-spacing-2">
                 <div className="container">
                    
-                    <p>this is main dashboard</p>
+                    <p>this is main dashboard oikjdhfgx</p>
                     {/* <ProductCategory/> */}
                 </div>
             </section>

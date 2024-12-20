@@ -92,6 +92,22 @@ const DashboardOffCanvas = React.forwardRef(({ closeOffcanvasAndNavigate }, ref)
                             Customer orders 
                             </a>
                         </li>
+                        <li className="nav-mb-item">
+                            <a
+                                onClick={() => closeOffcanvasAndNavigate("/dashboard/all-users")}
+                                className="collapsed mb-menu-link"
+                            >
+                           All Users
+                            </a>
+                        </li>
+                        <li className="nav-mb-item">
+                            <a
+                                onClick={() => closeOffcanvasAndNavigate("/dashboard/user-addresses")}
+                                className="collapsed mb-menu-link"
+                            >
+                           User Addresses
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
