@@ -83,7 +83,7 @@ const router = createBrowserRouter([
       { path: '/product/:slug', element: <ProductDetails /> },
       { path: '/offcanvas', element: <OffCanvasComponent /> },
       { path: '/products', element: <Products /> },
-      { path: '/aaa', element: <SkeletonLoader /> },
+      { path: '/aaayreyy', element: <SkeletonLoader /> },
 
       // Dashboard Route
       {
