@@ -1,11 +1,12 @@
 import React, {  useEffect } from 'react';
 import Title from '../../components/Title';
 import Slider from './Slider/Slider';
-import Collection from './collection/Collection';
-import BestSeller from './best-seller/BestSeller';
-import Store from './store/Store';
-import Brand from './brand/Brand';
+// import Collection from './collection/Collection';
+// import BestSeller from './best-seller/BestSeller';
+// import Store from './store/Store';
+// import Brand from './brand/Brand';
 import Compare from './mini-component/Compare';
+import Shop from '../shop/Shop';
 
 function Index() {
   useEffect(() => {
@@ -15,9 +16,10 @@ function Index() {
     <>
       <Title title="Chibuike Innocent - Web Developer" />
       <Slider />
-      <Collection />
-      <BestSeller />
-      <Store />
+      <Shop/>
+      {/* <Collection />
+      <BestSeller /> */}
+      {/* <Store /> */}
       {/* <Brand /> */}
     
      

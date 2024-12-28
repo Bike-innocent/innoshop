@@ -165,6 +165,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 import CartModals from './CartModals'
 import axios from "../../axiosInstance";
+import { IoClose } from 'react-icons/io5';
 
 function ShoppingCart() {
     const navigate = useNavigate();
@@ -253,7 +254,13 @@ function ShoppingCart() {
                     <div class="modal-content">
                         <div class="header">
                             <div class="title fw-5">Shopping cart</div>
-                            <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+                            <span
+                            className="cursor-pointer icon-close-popup "
+                            data-bs-dismiss="modal"
+                            >
+                            <IoClose size={26}/>
+                            </span>
+                            {/* <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span> */}
                         </div>
                         <div class="wrap">
                             <div class="tf-mini-cart-threshold">

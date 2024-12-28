@@ -274,7 +274,7 @@ function AccountLayout() {
                                 {/* Page Content */}
                                 <div className="w-full custom-lg:w-4/5 custom-lg:ml-3">
                                     {/* Sidebar Toggle Button */}
-                                    <div className="m-2 custom-lg:hidden flex space-x-4">
+                                    <div className="m-2 custom-lg:hidden flex space-x-4 overflow-x-auto">
                                         <Link
                                             to="/account/orders"
                                             className="text-sm sm:text-md active px-4 py-2 border rounded-sm border-gray-200 hover:text-red-500 focus:text-red-500 hover:bg-gray-200"

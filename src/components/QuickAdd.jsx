@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useQueryClient } from "@tanstack/react-query"; // Import queryClient
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap CSS
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Bootstrap JS
+import { IoClose } from 'react-icons/io5';
 
 
 function QuickAdd({ product, isOpen, onClose }) {
@@ -126,15 +127,21 @@ function QuickAdd({ product, isOpen, onClose }) {
 
   return (
     <>
-      <ToastContainer /> {/* Toast Container for displaying notifications */}
+      <ToastContainer /> 
       <div className="modal fade modalDemo"  ref={modalRef} id="quick_add">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="header">
-              <span
+            <span
+            className="cursor-pointer icon-close-popup "
+            data-bs-dismiss="modal"
+            >
+            <IoClose size={25}/>
+            </span>
+              {/* <span
                 className="icon-close icon-close-popup bg-red-500"
                 data-bs-dismiss="modal"
-              ></span>
+              ></span> */}
             </div>
             <div className="wrap">
               {/* Product Info */}

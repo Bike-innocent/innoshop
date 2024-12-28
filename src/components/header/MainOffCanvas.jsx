@@ -2,6 +2,7 @@ import React, { useEffect ,useContext} from 'react';
 import { Offcanvas } from 'bootstrap';
 // import { AuthUser } from '../../service/AuthUser';
 import { AuthContext } from '../../context/AuthContext';
+ import { IoClose } from 'react-icons/io5';
 
 function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
   useEffect(() => {
@@ -27,13 +28,25 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
       {/* Sticky Header Section with Close Icon */}
       <div className="flex justify-between items-center shadow-sm p-[14px] bg-white sticky top-0 z-10 border-b border-gray-200">
         <span className="text-3xl ml-[90px] font-bold">Innoshop</span>
-        <span
+        {/* <span
           className="icon-close icon-close-popup text-xl"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
         >
 
+        </span> */}
+
+        <span
+          className="cursor-pointer icon-close-popup -mt-1"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          <IoClose size={26}/>
         </span>
+
+
+      
+
       </div>
 
       {/* Scrollable Middle Content */}
@@ -41,7 +54,7 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
 
         
         <ul className="nav-ul-mb space-y-1" id="wrapper-menu-navigation">
-          <li className="nav-mb-item">
+          {/* <li className="nav-mb-item">
             <a
               onClick={() => closeOffcanvasAndNavigate("/")}
               className="collapsed mb-menu-link current"
@@ -56,7 +69,7 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
             >
               Shop
             </a>
-          </li>
+          </li> */}
           <li className="nav-mb-item">
             <a
               onClick={() => closeOffcanvasAndNavigate("/about-us")}

@@ -144,6 +144,7 @@ function ProductToolBar({ product }) {
 
     return (
         <>
+         <ToastContainer /> 
 
             <div class="tf-sticky-btn-atc">
                 <div class="container">

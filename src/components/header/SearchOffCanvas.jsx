@@ -116,6 +116,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Offcanvas } from 'bootstrap';
+import { IoClose } from 'react-icons/io5';
 
 function SearchOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
 
@@ -133,14 +134,22 @@ function SearchOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
       {/* Sticky Header Section with Close Icon */}
       <header className="flex justify-between items-center p-[13px] sticky top-0 z-10  ">
         <h2 className="text-xl font-semibold -mt-2">Search our site</h2>
-        <button
+        {/* <button
           className="icon-close icon-close-popup  text-xl -mt-2"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
         >
 
-        </button>
-      </header>
+        </button> */}
+
+        <span
+          className="cursor-pointer icon-close-popup "
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+          >
+          <IoClose size={27}/>
+          </span>
+    </header>
 
       {/* Search Form */}
       <div className="p-4 shadow-sm border-b-2 border-gray-400 mb-3">

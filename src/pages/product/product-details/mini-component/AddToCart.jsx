@@ -40,6 +40,30 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from "react";
 import axios from "../../../../axiosInstance"; // Axios instance for API calls
 import { toast, ToastContainer } from "react-toastify";
@@ -164,14 +188,10 @@ function AddToCart({ product }) {
             <span className="icon icon-check"></span>
           </a>
 
-          <div className="w-100">
-            <a href="#" className="btns-full">
-              Buy with <img src="assets/images/payments/paypal.png" alt="PayPal" />
-            </a>
-            <a href="#" className="payment-more-option">
-              More payment options
-            </a>
-          </div>
+         
+
+
+
         </form>
       </div>
     </>
@@ -179,3 +199,23 @@ function AddToCart({ product }) {
 }
 
 export default AddToCart;
+
+
+
+
+
+
+
+
+
+
+
+
+// <div className="w-100">
+// <a href="#" className="btns-full">
+//   Buy with <img src="assets/images/payments/paypal.png" alt="PayPal" />
+// </a>
+// <a href="#" className="payment-more-option">
+//   More payment options
+// </a>
+// </div>

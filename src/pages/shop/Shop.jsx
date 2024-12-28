@@ -91,6 +91,9 @@ function Shop() {
                 
                 
                 <div className="container">
+
+
+{/* 
                     <div className="tf-shop-control grid-3 align-items-center">
                         <div className="tf-control-filter">
                             <button onClick={toggleFilterOffcanvas} className="tf-btn-filter">
@@ -99,7 +102,7 @@ function Shop() {
                             </button>
                         </div>
 
-                        {/* Grid Layout Switch */}
+                       
                          <ul className="tf-control-layout d-flex justify-content-center">
                             <li className={`tf-view-layout-switch sw-layout-2 ${gridLayout === 'w-1/2' ? 'active' : ''}`} onClick={() => setGridLayout('w-1/2')}>
                                 <div className="item">
@@ -129,7 +132,11 @@ function Shop() {
                         </ul>
 
                         <CustomSelect />
-                    </div>
+                    </div> */}
+
+
+
+
 
                     {/* Products */}
                     <div className="grid-layout wrapper-shop">
@@ -143,7 +150,7 @@ function Shop() {
                                             {/* Product Image */}
                                             <Link to={`/product/${product.slug}`} className="product-img">
 
-                                                <img className="lazyload img-product" src={product.primary_image?.image_path} alt={product.name} />
+                                                <img className="lazyload img-product " src={product.primary_image?.image_path} alt={product.name} />
                                                 <img className="lazyload img-hover" src={product.images[0]?.image_path || product.images[1]?.image_path} alt={product.name} />
                                             </Link>
 
@@ -160,16 +167,7 @@ function Shop() {
                                                     <AiOutlineShoppingCart className="text-2xl" />
                                                     <span className="tooltip">Quick Add</span>
                                                 </button>
-                                                <Link to="javascript:void(0);" className="box-icon bg_white wishlist btn-icon-action">
-                                                    <AiOutlineHeart className="text-2xl" />
-                                                    <span className="tooltip">Add to Wishlist</span>
-                                                    <span className="icon icon-delete"></span>
-                                                </Link>
-                                                <Link to="#compare" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" className="box-icon bg_white compare btn-icon-action">
-                                                    <HiOutlineArrowsExpand className="text-2xl" />
-                                                    <span className="tooltip">Add to Compare</span>
-                                                    <span className="icon icon-check"></span>
-                                                </Link>
+                                               
                                                 <button onClick={() => handleQuickView(product)} className="box-icon bg_white quickview tf-btn-loading">
                                                     <AiOutlineEye className="text-2xl" />
                                                     <span className="tooltip">Quick View</span>
