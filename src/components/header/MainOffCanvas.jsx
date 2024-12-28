@@ -118,12 +118,8 @@ function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {
         </ul>
 
         {/* Additional Content */}
-        <div className="mt-4">
-          <div className="flex items-center space-x-4 mb-4">
-            <a onClick={() => closeOffcanvasAndNavigate("/wishlist")} className="site-nav-icon">
-              <i className="icon icon-heart"></i> Wishlist
-            </a>
-          </div>
+        <div className="mt-5">
+          
           <div className="mb-notice mb-4">
             <a onClick={() => closeOffcanvasAndNavigate("/contact-us")} className="text-need">Need help?</a>
           </div>

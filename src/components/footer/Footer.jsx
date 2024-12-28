@@ -6,11 +6,11 @@ import React from 'react';
 import FooterNav from './mini-component/FooterNav';
 import { FaFacebookF, FaTwitter, FaInstagram, FaTiktok, FaPinterestP } from 'react-icons/fa';
 
-import Visa from '../../../public/assets/images/payments/visa.png';
-import Img1 from '../../../public/assets/images/payments/img-1.png';
-import Img2 from '../../../public/assets/images/payments/img-2.png';
-import Img3 from '../../../public/assets/images/payments/img-3.png';
-import Img4 from '../../../public/assets/images/payments/img-4.png';
+// import Visa from '../../../public/assets/images/payments/visa.png';
+// import Img1 from '../../../public/assets/images/payments/img-1.png';
+// import Img2 from '../../../public/assets/images/payments/img-2.png';
+// import Img3 from '../../../public/assets/images/payments/img-3.png';
+// import Img4 from '../../../public/assets/images/payments/img-4.png';
 
 
 
@@ -90,12 +90,12 @@ function Footer() {
                                             All Rights Reserved
                                         </div>
                                         <div className="tf-payment">
-                                            <img src={Visa} alt=""  />
+                                            {/* <img src={Visa} alt=""  />
                                             <img src={Img1} alt=""  />
                                             <img src={Img2} alt=""  />
                                             <img src={Img3} alt=""  />
-                                            <img src={Img4} alt=""  />
-                                           
+                                            <img src={Img4} alt=""  /> 
+                                            */}
                                            
                                         </div>
                                     </div>

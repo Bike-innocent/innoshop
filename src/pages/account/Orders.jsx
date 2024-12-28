@@ -11,6 +11,7 @@ function Orders() {
                     <div class="col-12">
                         <div class=" account-order">
                             <div class="wrap-account-order">
+                                <p>this is the structure of the order tables am working on the cart for the full functionality</p>
                                 <table>
                                     <thead>
                                         <tr>

@@ -12,6 +12,7 @@ function Address() {
                             <div class="col-12">
                                 <div class=" account-address">
                                     <div class="">
+                                    <p>this is the structure of the address, am working on the user logic for the full functionality</p>
                                         <div>
                                             <h6 class="mb_20">Default</h6>
                                             <p>themesflat</p>
