@@ -1,7 +1,7 @@
 import React, { useEffect ,useContext} from 'react';
 import { Offcanvas } from 'bootstrap';
 // import { AuthUser } from '../../service/AuthUser';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
  import { IoClose } from 'react-icons/io5';
 
 function MainOffCanvas({ offcanvasRef, closeOffcanvasAndNavigate }) {

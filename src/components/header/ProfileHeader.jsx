@@ -90,7 +90,7 @@
 
 import React, { useState, useEffect,useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 // import { AuthUser } from '../../service/AuthUser';
  import placeholder from '../../../public/assets/images/profile/placeholder.png';
 

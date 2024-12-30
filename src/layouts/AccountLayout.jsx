@@ -186,7 +186,7 @@ import ToolBar from '../components/tool-bar/ToolBar';
 import AuthModal from '../components/header/AuthModal';
 import ShoppingCart from '../components/header/ShoppingCart';
 
-import { AuthContext } from '../context/AuthContext'; 
+import { AuthContext } from '../contexts/AuthContext'; 
 
 function AccountLayout() {
     const { user, logout } = useContext(AuthContext); 

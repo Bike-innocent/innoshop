@@ -54,13 +54,13 @@ function Slider() {
                     <p className="fade-item fade-item-2">
                       Discover the hottest trends and must-have looks
                     </p>
-                    <Link
+                    {/* <Link
                       to="/"
                       className="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-3"
                     >
                       <span>Shop collection</span>
                       <i className="icon icon-arrow-right"></i>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -81,13 +81,13 @@ function Slider() {
                     <p className="fade-item fade-item-2">
                       Discover the hottest trends and must-have looks
                     </p>
-                    <Link
+                    {/* <Link
                       to="/"
                       className="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-3"
                     >
                       <span>Shop collection</span>
                       <i className="icon icon-arrow-right"></i>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -108,13 +108,13 @@ function Slider() {
                     <p className="fade-item fade-item-2">
                       Discover the hottest trends and must-have looks
                     </p>
-                    <Link
+                    {/* <Link
                        to="/"
                       className="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-3"
                     >
                       <span>Shop collection</span>
                       <i className="icon icon-arrow-right"></i>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>

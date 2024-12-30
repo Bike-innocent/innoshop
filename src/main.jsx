@@ -98,8 +98,8 @@ import './css/swiper-bundle.css';
 
 // Import AOS
 import AOS from 'aos';
-import { AuthProvider } from './context/AuthContext'; // Ensure AuthProvider is imported
-import {  CartProvider } from './context/CartContext'; // Ensure AuthProvider is imported
+import { AuthProvider } from './contexts/AuthContext'; // Ensure AuthProvider is imported
+import {  CartProvider } from './contexts/CartContext'; // Ensure AuthProvider is imported
 
 // Create QueryClient instance
 const queryClient = new QueryClient();

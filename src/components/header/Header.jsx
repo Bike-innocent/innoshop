@@ -8,10 +8,10 @@ import { Offcanvas } from 'bootstrap';
 import SearchOffCanvas from './SearchOffCanvas';
 import MainOffCanvas from './MainOffCanvas';
 // import { AuthUser } from '../../service/AuthUser';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 import { FiSearch, FiUser, FiHeart } from 'react-icons/fi';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import useCart from '../../hooks/useCart'; // Import the custom hook
+import { useCart } from "../../contexts/CartContext"; 
 
 
 
@@ -22,7 +22,7 @@ function Header() {
   const mainOffcanvasRef = useRef(null);
   const searchOffcanvasRef = useRef(null);
   const navigate = useNavigate();
-  const { cart } = useCart();
+  const { cart } = useCart(); // Access the cart from context
 
   // Fetch user data with the custom hook
   const { user } = useContext(AuthContext);

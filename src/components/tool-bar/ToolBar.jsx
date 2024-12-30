@@ -254,7 +254,7 @@ import { Offcanvas } from "bootstrap";
 import SearchOffCanvas from "../header/SearchOffCanvas";
 import { FiSearch, FiUser, FiHeart, FiHome } from "react-icons/fi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useCart } from "../../context/CartContext"; // Updated CartContext
+import { useCart } from "../../contexts/CartContext"; // Updated CartContext
 
 function ToolBar() {
     const searchOffcanvasRef = useRef(null);

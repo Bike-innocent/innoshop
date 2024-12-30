@@ -4,7 +4,7 @@
 import React, { useEffect, useState,useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from '../../axiosInstance';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 
 function Login() {
     const navigate = useNavigate();

@@ -160,77 +160,283 @@
 
 
 
+// import React from "react";
+// import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+// import { Link, useNavigate } from "react-router-dom";
+// import CartModals from './CartModals'
+// import axios from "../../axiosInstance";
+// import { IoClose } from 'react-icons/io5';
+
+// function ShoppingCart() {
+//     const navigate = useNavigate();
+//     const queryClient = useQueryClient();
+//     const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+
+//     // Fetch Cart Data
+//     const fetchCart = async () => {
+//         if (isAuthenticated) {
+//             const response = await axios.get("/cart");
+//             return response.data;
+//         } else {
+//             return JSON.parse(localStorage.getItem("cart")) || [];
+//         }
+//     };
+
+//     const { data: cart = [], isLoading } = useQuery({
+//         queryKey: ["cart"],
+//         queryFn: fetchCart,
+//         staleTime: 1000 * 60 * 5,
+//     });
+
+//     // Update Cart Count in Local Storage
+//     const updateCartCount = (updatedCart) => {
+//         localStorage.setItem("cart", JSON.stringify(updatedCart));
+//         localStorage.setItem("cartCount", updatedCart.length);
+//         window.dispatchEvent(new Event("cartUpdated"));
+//     };
+
+//     // Mutations for Remove and Quantity Update
+//     const removeItemMutation = useMutation({
+//         mutationFn: async (id) => {
+//             if (isAuthenticated) {
+//                 await axios.delete(`/cart/${id}`);
+//             } else {
+//                 const updatedCart = cart.filter((item) => item.id !== id);
+//                 updateCartCount(updatedCart);
+//             }
+//         },
+//         onSuccess: () => queryClient.invalidateQueries(["cart"]),
+//     });
+
+//     const updateQuantityMutation = useMutation({
+//         mutationFn: async ({ id, action }) => {
+//             if (isAuthenticated) {
+//                 const updatedQuantity =
+//                     action === "increment"
+//                         ? cart.find((item) => item.id === id).quantity + 1
+//                         : Math.max(1, cart.find((item) => item.id === id).quantity - 1);
+//                 await axios.put(`/cart/${id}`, { quantity: updatedQuantity });
+//             } else {
+//                 const updatedCart = cart.map((item) => {
+//                     if (item.id === id) {
+//                         return {
+//                             ...item,
+//                             quantity: action === "increment" ? item.quantity + 1 : Math.max(1, item.quantity - 1),
+//                         };
+//                     }
+//                     return item;
+//                 });
+//                 updateCartCount(updatedCart);
+//             }
+//         },
+//         onSuccess: () => queryClient.invalidateQueries(["cart"]),
+//     });
+
+//     // Handle Navigation and Close Modal
+//     const handleLinkClick = (path) => {
+//         const modal = document.querySelector(".modal.show");
+//         if (modal) {
+//             const modalInstance = bootstrap.Modal.getInstance(modal);
+//             modalInstance.hide();
+//         }
+//         navigate(path);
+//     };
+
+//     if (isLoading) return <div> </div>;
+
+//     return (
+//         <>
+
+
+
+//             <div class="modal fullRight fade modal-shopping-cart" id="shoppingCart">
+//                 <div class="modal-dialog">
+//                     <div class="modal-content">
+//                         <div class="header">
+//                             <div class="title fw-5">Shopping cart</div>
+//                             <span
+//                             className="cursor-pointer icon-close-popup "
+//                             data-bs-dismiss="modal"
+//                             >
+//                             <IoClose size={26}/>
+//                             </span>
+//                             {/* <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span> */}
+//                         </div>
+//                         <div class="wrap">
+//                             <div class="tf-mini-cart-threshold">
+//                                 <div class="tf-progress-bar">
+//                                     <span style={{ width: '50%' }}></span>
+//                                 </div>
+//                                 <div class="tf-progress-msg">
+//                                     Buy <span class="price fw-6">₦500.00</span> more to enjoy <span class="fw-6">Free Shipping</span>
+//                                 </div>
+//                             </div>
+
+
+
+//                             <div class="tf-mini-cart-wrap">
+
+//                                 {cart.length === 0 ? (
+//                                     <div className="text-center py-5">
+//                                         <h5>Your cart is empty</h5>
+//                                         <button
+//                                             className="tf-btn btn-sm radius-3 btn-fill"
+//                                             onClick={() => handleLinkClick("/shop")}
+//                                         >
+//                                             Return to shop
+//                                         </button>
+//                                     </div>
+//                                 ) : (
+//                                     <div className="tf-mini-cart-main">
+
+//                                         <div class="tf-mini-cart-sroll">
+//                                             <div class="tf-mini-cart-items">
+
+
+
+
+
+
+//                                                 {cart.map((item) => (
+//                                                     <div className="tf-mini-cart-item" key={item.id}>
+
+
+//                                                         <div className="tf-mini-cart-image">
+//                                                             <Link to={`/product/${item.slug}`} onClick={() => handleLinkClick(`/product/${item.slug}`)}>
+//                                                                 <img src={item.image} alt={item.name} />
+//                                                             </Link>
+//                                                         </div>
+
+
+//                                                         <div className="tf-mini-cart-info">
+//                                                             <Link
+//                                                                 className="title link"
+//                                                                 to={`/product/${item.slug}`}
+//                                                                 onClick={() => handleLinkClick(`/product/${item.slug}`)}
+//                                                             >
+//                                                                 {item.name}
+//                                                             </Link>
+//                                                             <div className="meta-variant">
+//                                                                 {item.color} / {item.size}
+//                                                             </div>
+//                                                             <div className="price fw-6">₦{item.price}</div>
+//                                                             <div className="tf-mini-cart-btns">
+//                                                                 <div className="wg-quantity small">
+//                                                                     <span
+//                                                                         className="btn-quantity minus-btn"
+//                                                                         onClick={() =>
+//                                                                             updateQuantityMutation.mutate({ id: item.id, action: "decrement" })
+//                                                                         }
+//                                                                     >
+//                                                                         -
+//                                                                     </span>
+//                                                                     <input type="text" value={item.quantity} readOnly />
+//                                                                     <span
+//                                                                         className="btn-quantity plus-btn"
+//                                                                         onClick={() =>
+//                                                                             updateQuantityMutation.mutate({ id: item.id, action: "increment" })
+//                                                                         }
+//                                                                     >
+//                                                                         +
+//                                                                     </span>
+//                                                                 </div>
+//                                                                 <a
+                                                                   
+//                                                                     className="hover:underline text-sm text-red-500"
+//                                                                     onClick={() => removeItemMutation.mutate(item.id)}
+//                                                                 >
+//                                                                     Remove
+//                                                                 </a>
+//                                                             </div>
+//                                                         </div>
+//                                                     </div>
+//                                                 ))}
+
+
+
+
+
+//                                             </div>
+//                                         </div>
+//                                     </div>
+
+//                                 )}
+
+
+//                                 <div class="tf-mini-cart-bottom">
+//                                     <div class="tf-mini-cart-tool h-1">
+                                       
+//                                     </div>
+//                                     <div class="tf-mini-cart-bottom-wrap">
+//                                         <div class="tf-cart-totals-discounts">
+//                                             <div class="tf-cart-total">Subtotal</div>
+//                                             <div class="tf-totals-total-value fw-6"> ₦{cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)} NGN</div>
+//                                         </div>
+//                                         <div class="tf-cart-tax">Taxes and <a href="#">shipping</a> calculated at checkout</div>
+//                                         <div class="tf-mini-cart-line"></div>
+//                                         <div class="tf-cart-checkbox">
+//                                             <div class="tf-checkbox-wrapp">
+//                                                 <input class="" type="checkbox" id="CartDrawer-Form_agree" name="agree_checkbox" />
+//                                                 <div>
+//                                                     <i class="icon-check"></i>
+//                                                 </div>
+//                                             </div>
+//                                             <label for="CartDrawer-Form_agree">
+//                                                 I agree with the
+//                                                 <a onClick={() => handleLinkClick('/terms-and-condition')} title="Terms of Service"> terms and conditions</a>
+//                                             </label>
+//                                         </div>
+//                                         <div class="tf-mini-cart-view-checkout">
+//                                             <a onClick={() => handleLinkClick('/view-cart')} data-bs-dismiss="modal" class="tf-btn btn-outline radius-3 link w-100 justify-content-center">View full cart</ a>
+//                                             <a onClick={() => handleLinkClick('/check-out')} data-bs-dismiss="modal" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Check out</span></ a>
+//                                         </div>
+//                                     </div>
+//                                 </div>
+//                                 <CartModals />
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//         </>
+
+
+//     );
+// }
+
+// export default ShoppingCart;
+
+
+
+
+
+
 import React from "react";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Link, useNavigate } from "react-router-dom";
-import CartModals from './CartModals'
-import axios from "../../axiosInstance";
 import { IoClose } from 'react-icons/io5';
+import { useCart } from "../../contexts/CartContext";
+import { Link, useNavigate } from "react-router-dom";
 
 function ShoppingCart() {
     const navigate = useNavigate();
-    const queryClient = useQueryClient();
-    const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
-
-    // Fetch Cart Data
-    const fetchCart = async () => {
-        if (isAuthenticated) {
-            const response = await axios.get("/cart");
-            return response.data;
-        } else {
-            return JSON.parse(localStorage.getItem("cart")) || [];
-        }
-    };
-
-    const { data: cart = [], isLoading } = useQuery({
-        queryKey: ["cart"],
-        queryFn: fetchCart,
-        staleTime: 1000 * 60 * 5,
-    });
-
-    // Update Cart Count in Local Storage
-    const updateCartCount = (updatedCart) => {
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
-        localStorage.setItem("cartCount", updatedCart.length);
-        window.dispatchEvent(new Event("cartUpdated"));
-    };
-
-    // Mutations for Remove and Quantity Update
-    const removeItemMutation = useMutation({
-        mutationFn: async (id) => {
-            if (isAuthenticated) {
-                await axios.delete(`/cart/${id}`);
-            } else {
-                const updatedCart = cart.filter((item) => item.id !== id);
-                updateCartCount(updatedCart);
-            }
-        },
-        onSuccess: () => queryClient.invalidateQueries(["cart"]),
-    });
-
-    const updateQuantityMutation = useMutation({
-        mutationFn: async ({ id, action }) => {
-            if (isAuthenticated) {
-                const updatedQuantity =
-                    action === "increment"
-                        ? cart.find((item) => item.id === id).quantity + 1
-                        : Math.max(1, cart.find((item) => item.id === id).quantity - 1);
-                await axios.put(`/cart/${id}`, { quantity: updatedQuantity });
-            } else {
-                const updatedCart = cart.map((item) => {
-                    if (item.id === id) {
-                        return {
-                            ...item,
-                            quantity: action === "increment" ? item.quantity + 1 : Math.max(1, item.quantity - 1),
-                        };
-                    }
-                    return item;
-                });
-                updateCartCount(updatedCart);
-            }
-        },
-        onSuccess: () => queryClient.invalidateQueries(["cart"]),
-    });
+    const { cart, removeFromCart, updateQuantity, isLoading } = useCart();
 
     // Handle Navigation and Close Modal
     const handleLinkClick = (path) => {
@@ -242,183 +448,127 @@ function ShoppingCart() {
         navigate(path);
     };
 
-    if (isLoading) return <div> </div>;
+    // Calculate Subtotal
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
+
+    if (isLoading) return <div>Loading...</div>;
 
     return (
-        <>
-
-
-
-            <div class="modal fullRight fade modal-shopping-cart" id="shoppingCart">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="header">
-                            <div class="title fw-5">Shopping cart</div>
-                            <span
+        <div className="modal fullRight fade modal-shopping-cart" id="shoppingCart">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="header">
+                        <div className="title fw-5">Shopping cart</div>
+                        <span
                             className="cursor-pointer icon-close-popup "
                             data-bs-dismiss="modal"
-                            >
+                        >
                             <IoClose size={26}/>
-                            </span>
-                            {/* <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span> */}
-                        </div>
-                        <div class="wrap">
-                            <div class="tf-mini-cart-threshold">
-                                <div class="tf-progress-bar">
-                                    <span style={{ width: '50%' }}></span>
-                                </div>
-                                <div class="tf-progress-msg">
-                                    Buy <span class="price fw-6">₦500.00</span> more to enjoy <span class="fw-6">Free Shipping</span>
-                                </div>
+                        </span>
+                    </div>
+                    <div className="wrap">
+                        <div className="tf-mini-cart-threshold">
+                            <div className="tf-progress-bar">
+                                <span style={{ width: '50%' }}></span>
                             </div>
+                            <div className="tf-progress-msg">
+                                Buy <span className="price fw-6">₦500.00</span> more to enjoy <span className="fw-6">Free Shipping</span>
+                            </div>
+                        </div>
 
-
-
-                            <div class="tf-mini-cart-wrap">
-
-                                {cart.length === 0 ? (
-                                    <div className="text-center py-5">
-                                        <h5>Your cart is empty</h5>
-                                        <button
-                                            className="tf-btn btn-sm radius-3 btn-fill"
-                                            onClick={() => handleLinkClick("/shop")}
-                                        >
-                                            Return to shop
-                                        </button>
-                                    </div>
-                                ) : (
-                                    <div className="tf-mini-cart-main">
-
-                                        <div class="tf-mini-cart-sroll">
-                                            <div class="tf-mini-cart-items">
-
-
-
-
-
-
-                                                {cart.map((item) => (
-                                                    <div className="tf-mini-cart-item" key={item.id}>
-
-
-                                                        <div className="tf-mini-cart-image">
-                                                            <Link to={`/product/${item.slug}`} onClick={() => handleLinkClick(`/product/${item.slug}`)}>
-                                                                <img src={item.image} alt={item.name} />
-                                                            </Link>
+                        <div className="tf-mini-cart-wrap">
+                            {cart.length === 0 ? (
+                                <div className="text-center py-5">
+                                    <h5>Your cart is empty</h5>
+                                    <button
+                                        className="tf-btn btn-sm radius-3 btn-fill"
+                                        onClick={() => handleLinkClick("/shop")}
+                                    >
+                                        Return to shop
+                                    </button>
+                                </div>
+                            ) : (
+                                <div className="tf-mini-cart-main">
+                                    <div className="tf-mini-cart-scroll">
+                                        <div className="tf-mini-cart-items">
+                                            {cart.map((item) => (
+                                                <div className="tf-mini-cart-item" key={item.id}>
+                                                    <div className="tf-mini-cart-image">
+                                                        <Link to={`/product/${item.slug}`} onClick={() => handleLinkClick(`/product/${item.slug}`)}>
+                                                            <img src={item.image} alt={item.name} />
+                                                        </Link>
+                                                    </div>
+                                                    <div className="tf-mini-cart-info">
+                                                        <Link
+                                                            className="title link"
+                                                            to={`/product/${item.slug}`}
+                                                            onClick={() => handleLinkClick(`/product/${item.slug}`)}
+                                                        >
+                                                            {item.name}
+                                                        </Link>
+                                                        <div className="meta-variant">
+                                                            {item.color} / {item.size}
                                                         </div>
-
-
-                                                        <div className="tf-mini-cart-info">
-                                                            <Link
-                                                                className="title link"
-                                                                to={`/product/${item.slug}`}
-                                                                onClick={() => handleLinkClick(`/product/${item.slug}`)}
-                                                            >
-                                                                {item.name}
-                                                            </Link>
-                                                            <div className="meta-variant">
-                                                                {item.color} / {item.size}
-                                                            </div>
-                                                            <div className="price fw-6">₦{item.price}</div>
-                                                            <div className="tf-mini-cart-btns">
-                                                                <div className="wg-quantity small">
-                                                                    <span
-                                                                        className="btn-quantity minus-btn"
-                                                                        onClick={() =>
-                                                                            updateQuantityMutation.mutate({ id: item.id, action: "decrement" })
-                                                                        }
-                                                                    >
-                                                                        -
-                                                                    </span>
-                                                                    <input type="text" value={item.quantity} readOnly />
-                                                                    <span
-                                                                        className="btn-quantity plus-btn"
-                                                                        onClick={() =>
-                                                                            updateQuantityMutation.mutate({ id: item.id, action: "increment" })
-                                                                        }
-                                                                    >
-                                                                        +
-                                                                    </span>
-                                                                </div>
-                                                                <a
-                                                                   
-                                                                    className="hover:underline text-sm text-red-500"
-                                                                    onClick={() => removeItemMutation.mutate(item.id)}
+                                                        <div className="price fw-6">₦{item.price}</div>
+                                                        <div className="tf-mini-cart-btns">
+                                                            <div className="wg-quantity small">
+                                                                <span
+                                                                    className="btn-quantity minus-btn"
+                                                                    onClick={() => updateQuantity(item.id, "decrement")}
                                                                 >
-                                                                    Remove
-                                                                </a>
+                                                                    -
+                                                                </span>
+                                                                <input type="text" value={item.quantity} readOnly />
+                                                                <span
+                                                                    className="btn-quantity plus-btn"
+                                                                    onClick={() => updateQuantity(item.id, "increment")}
+                                                                >
+                                                                    +
+                                                                </span>
                                                             </div>
+                                                            <a
+                                                                className="hover:underline text-sm text-red-500"
+                                                                onClick={() => removeFromCart(item.id)}
+                                                            >
+                                                                Remove
+                                                            </a>
                                                         </div>
                                                     </div>
-                                                ))}
-
-
-
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                )}
-
-
-                                <div class="tf-mini-cart-bottom">
-                                    <div class="tf-mini-cart-tool h-1">
-                                       
-                                    </div>
-                                    <div class="tf-mini-cart-bottom-wrap">
-                                        <div class="tf-cart-totals-discounts">
-                                            <div class="tf-cart-total">Subtotal</div>
-                                            <div class="tf-totals-total-value fw-6"> ₦{cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)} NGN</div>
-                                        </div>
-                                        <div class="tf-cart-tax">Taxes and <a href="#">shipping</a> calculated at checkout</div>
-                                        <div class="tf-mini-cart-line"></div>
-                                        <div class="tf-cart-checkbox">
-                                            <div class="tf-checkbox-wrapp">
-                                                <input class="" type="checkbox" id="CartDrawer-Form_agree" name="agree_checkbox" />
-                                                <div>
-                                                    <i class="icon-check"></i>
                                                 </div>
-                                            </div>
-                                            <label for="CartDrawer-Form_agree">
-                                                I agree with the
-                                                <a onClick={() => handleLinkClick('/terms-and-condition')} title="Terms of Service"> terms and conditions</a>
-                                            </label>
-                                        </div>
-                                        <div class="tf-mini-cart-view-checkout">
-                                            <a onClick={() => handleLinkClick('/view-cart')} data-bs-dismiss="modal" class="tf-btn btn-outline radius-3 link w-100 justify-content-center">View full cart</ a>
-                                            <a onClick={() => handleLinkClick('/check-out')} data-bs-dismiss="modal" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Check out</span></ a>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
-                                <CartModals />
+                            )}
+                            <div className="tf-mini-cart-bottom">
+                                <div className="tf-mini-cart-bottom-wrap">
+                                    <div className="tf-cart-totals-discounts">
+                                        <div className="tf-cart-total">Subtotal</div>
+                                        <div className="tf-totals-total-value fw-6">₦{subtotal} NGN</div>
+                                    </div>
+                                    <div className="tf-cart-tax">Taxes and <a href="#">shipping</a> calculated at checkout</div>
+                                    <div className="tf-mini-cart-line"></div>
+                                    <div className="tf-cart-checkbox">
+                                        <div className="tf-checkbox-wrap">
+                                            <input type="checkbox" id="CartDrawer-Form_agree" name="agree_checkbox" />
+                                            <div><i className="icon-check"></i></div>
+                                        </div>
+                                        <label htmlFor="CartDrawer-Form_agree">
+                                            I agree with the
+                                            <a onClick={() => handleLinkClick('/terms-and-condition')}> terms and conditions</a>
+                                        </label>
+                                    </div>
+                                    <div className="tf-mini-cart-view-checkout">
+                                        <a onClick={() => handleLinkClick('/view-cart')} data-bs-dismiss="modal" className="tf-btn btn-outline radius-3 link w-100 justify-content-center">View full cart</a>
+                                        <a onClick={() => handleLinkClick('/check-out')} data-bs-dismiss="modal" className="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Check out</span></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </>
-
-
+        </div>
     );
 }
 

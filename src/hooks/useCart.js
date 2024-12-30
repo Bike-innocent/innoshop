@@ -49,7 +49,7 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "../axiosInstance";
 import { useContext } from "react";
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../contexts/AuthContext'
 
 const useCart = () => {
     const queryClient = useQueryClient();
@@ -66,7 +66,7 @@ const useCart = () => {
 
     // React Query: Fetch Cart Data
     const { data: cart = [], isLoading, isError } = useQuery({
-        queryKey: ["cart"], // Static query key
+        queryKey: ["cartss"], // Static query key
         queryFn: fetchCart, // Fetch function
         staleTime: 1000 * 60 * 5, // Cache for 5 minutes
         cacheTime: 1000 * 60 * 10, // Keep cache for 10 minutes
@@ -76,7 +76,7 @@ const useCart = () => {
 
     // Function to invalidate cache on mutation
     const invalidateCart = () => {
-        queryClient.invalidateQueries(["cart"]);
+        queryClient.invalidateQueries(["cartss"]);
     };
 
     return { cart, isLoading, isError, invalidateCart };

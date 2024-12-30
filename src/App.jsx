@@ -48,7 +48,7 @@ import CustomerOrders from './pages/product/order/CustomerOrders.jsx';
 import AllUser from './pages/all-user/AllUser.jsx';
 import UserAddress from './pages/all-user/UserAddress.jsx';
 import AccountLayout from './layouts/AccountLayout.jsx';
-import RequireAuth from './context/RequireAuth.jsx';
+import RequireAuth from './contexts/RequireAuth.jsx';
 
 const router = createBrowserRouter([
 
