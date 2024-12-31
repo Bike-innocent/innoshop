@@ -128,11 +128,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CheckOutForm from "./mini-component/CheckOutForm";
-import useCart from "../../hooks/useCart";
+import { useCart } from "../../contexts/CartContext";
 import axiosInstance from "../../axiosInstance"; // Import your Axios instance
 
 function CheckOut() {
-  const { cart, isLoading, isError } = useCart();
+  
+  const { cart,  isLoading } = useCart();
   const [loading, setLoading] = useState(false); // Loading state
   const [error, setError] = useState(null); // Error state
   const [successMessage, setSuccessMessage] = useState(""); // Success message
@@ -171,44 +172,14 @@ function CheckOut() {
   
   
 
-  // Handle place order
-  // const handlePlaceOrder = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   setError(null);
-  //   setSuccessMessage("");
-
-  //   // Prepare data for API
-  //   const orderData = {
-      
-  //     order_date: new Date().toISOString(),
-  //     status: "pending",
-  //     order_lines: cart.map((product) => ({
-  //       product_id: product.id,
-  //       quantity: product.quantity,
-  //       price: product.price,
-  //     })),
-  //   };
-
-  //   try {
-  //     const response = await axiosInstance.post("/orders", orderData);
-  //     setSuccessMessage("Order placed successfully!");
-  //     console.log(response.data); // Handle response data
-  //   } catch (err) {
-  //     console.error(err);
-  //     setError("Failed to place order. Please try again.");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
+ 
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
-  if (isError) {
-    return <p>Something went wrong while fetching the cart.</p>;
-  }
+  // if (isError) {
+  //   return <p>Something went wrong while fetching the cart.</p>;
+  // }
 
   return (
     <>

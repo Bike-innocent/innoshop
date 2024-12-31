@@ -243,6 +243,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
@@ -269,9 +283,9 @@ function ViewCart() {
                 
                 <h5 className="mb_24">Your cart is empty</h5>
                 <p className="mb_24">You may check out all the available products and buy some in the shop</p>
-                <a href="/shop" className="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn">
+                <Link to="/" className="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn">
                     Return to shop<i className="icon icon-arrow1-top-left"></i>
-                </a>
+                </Link>
             </div>
         );
     }

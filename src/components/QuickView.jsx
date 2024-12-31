@@ -322,11 +322,12 @@ function QuickView({ product, isOpen, onClose }) {
       color: product.colour.name,
       size: product.size.name,
       slug: product.slug,
-      quantity,
+      
     };
 
-    addToCart(productData); // Add product to cart using CartContext
+    addToCart(productData, quantity); // Pass quantity to addToCart
 
+   
     toast.success("Product added to cart!", { position: "top-right", autoClose: 3000 });
     const modalElement = document.getElementById("quick_view");
     bootstrap.Modal.getInstance(modalElement)?.hide();
@@ -377,12 +378,12 @@ function QuickView({ product, isOpen, onClose }) {
                   <div className="tf-product-info-title">
                     <h5>{product.name}</h5>
                   </div>
-                  <div className="tf-product-info-badges">
+                  {/* <div className="tf-product-info-badges">
                     <div className="badges text-uppercase">Best Seller</div>
                     <div className="product-status-content">
                       <p className="fw-6">Selling fast! {Math.floor(Math.random() * 50) + 1} people have this in their carts.</p>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="tf-product-info-price">
                     <div className="price">₦{product.price}</div>
                   </div>

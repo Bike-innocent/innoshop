@@ -246,7 +246,7 @@
 
 
 import React from 'react'
-import AddToCart from './AddToCart';
+// import AddToCart from './AddToCart';
 import FindSize from './FindSize';
 
 function Details({ product }) {

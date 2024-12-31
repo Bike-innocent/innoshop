@@ -22,7 +22,7 @@ function Header() {
   const mainOffcanvasRef = useRef(null);
   const searchOffcanvasRef = useRef(null);
   const navigate = useNavigate();
-  const { cart } = useCart(); // Access the cart from context
+  const { totalQuantity } = useCart(); // Access the cart from context
 
   // Fetch user data with the custom hook
   const { user } = useContext(AuthContext);
@@ -77,7 +77,7 @@ function Header() {
             <nav className="box-navigation text-center">
               <ul className="box-nav-ul flex align-items-center justify-content-center gap-40">
                 {/* <li><Link to="/" className="item-link">Home</Link></li> */}
-                <li><Link to="/shop" className="item-link">Shop</Link></li>
+                {/* <li><Link to="/shop" className="item-link">Shop</Link></li> */}
                 <li><Link to="/about-us" className="item-link">About Us</Link></li>
                 <li><Link to="/contact-us" className="item-link">Contact Us</Link></li>
                 <li><Link to="/our-store" className="item-link">Our Store</Link></li>
@@ -110,13 +110,7 @@ function Header() {
                   <FiUser className="text-xl" />
                 </Link>
               </li>
-              {/* <li className="nav-wishlist">
-                <Link to="/wishlist" className="nav-icon-item">
-                  <FiHeart className="text-xl" />
-                  <span className="count-box">0</span> 
-                </Link>
-                
-              </li> */}
+            
 
 
 
@@ -124,9 +118,11 @@ function Header() {
                 <a href="#shoppingCart" data-bs-toggle="modal" className="nav-icon-item">
                   <AiOutlineShoppingCart className="text-2xl" />
 
-                  {cart.length > 0 && (
+                 
 
-                    <span className="count-box">{cart.length}</span>
+                  {totalQuantity > 0 && (
+                     <span className="count-box">{totalQuantity}</span>
+                        
                   )}
 
                   

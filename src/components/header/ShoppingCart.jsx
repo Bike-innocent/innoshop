@@ -160,6 +160,45 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React from "react";
 // import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 // import { Link, useNavigate } from "react-router-dom";
@@ -392,6 +431,13 @@
 //                                         </div>
 //                                     </div>
 //                                 </div>
+
+
+
+
+
+
+
 //                                 <CartModals />
 //                             </div>
 //                         </div>
@@ -429,6 +475,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React from "react";
 import { IoClose } from 'react-icons/io5';
 import { useCart } from "../../contexts/CartContext";
@@ -449,7 +514,7 @@ function ShoppingCart() {
     };
 
     // Calculate Subtotal
-    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
+    // const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
 
     if (isLoading) return <div>Loading...</div>;
 
@@ -476,13 +541,13 @@ function ShoppingCart() {
                             </div>
                         </div>
 
-                        <div className="tf-mini-cart-wrap">
+                        <div className="tf-mini-cart-wrap ">
                             {cart.length === 0 ? (
-                                <div className="text-center py-5">
-                                    <h5>Your cart is empty</h5>
+                                <div className="text-center py-5  mb-auto">
+                                    <h5 className="mb-2">Your cart is empty</h5>
                                     <button
                                         className="tf-btn btn-sm radius-3 btn-fill"
-                                        onClick={() => handleLinkClick("/shop")}
+                                        onClick={() => handleLinkClick("/")}
                                     >
                                         Return to shop
                                     </button>
@@ -540,30 +605,45 @@ function ShoppingCart() {
                                     </div>
                                 </div>
                             )}
-                            <div className="tf-mini-cart-bottom">
-                                <div className="tf-mini-cart-bottom-wrap">
-                                    <div className="tf-cart-totals-discounts">
-                                        <div className="tf-cart-total">Subtotal</div>
-                                        <div className="tf-totals-total-value fw-6">₦{subtotal} NGN</div>
+
+                            
+                                <div class="tf-mini-cart-bottom">
+                                    <div class="tf-mini-cart-tool h-1">
+                                       
                                     </div>
-                                    <div className="tf-cart-tax">Taxes and <a href="#">shipping</a> calculated at checkout</div>
-                                    <div className="tf-mini-cart-line"></div>
-                                    <div className="tf-cart-checkbox">
-                                        <div className="tf-checkbox-wrap">
-                                            <input type="checkbox" id="CartDrawer-Form_agree" name="agree_checkbox" />
-                                            <div><i className="icon-check"></i></div>
+                                    <div class="tf-mini-cart-bottom-wrap">
+                                        <div class="tf-cart-totals-discounts">
+                                            <div class="tf-cart-total">Subtotal</div>
+                                            <div class="tf-totals-total-value fw-6"> ₦{cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)} NGN</div>
                                         </div>
-                                        <label htmlFor="CartDrawer-Form_agree">
-                                            I agree with the
-                                            <a onClick={() => handleLinkClick('/terms-and-condition')}> terms and conditions</a>
-                                        </label>
+                                        <div class="tf-cart-tax">Taxes and <a href="#">shipping</a> calculated at checkout</div>
+                                        <div class="tf-mini-cart-line"></div>
+                                        <div class="tf-cart-checkbox">
+                                            <div class="tf-checkbox-wrapp">
+                                                <input class="" type="checkbox" id="CartDrawer-Form_agree" name="agree_checkbox" />
+                                                <div>
+                                                    <i class="icon-check"></i>
+                                                </div>
+                                            </div>
+                                            <label for="CartDrawer-Form_agree">
+                                                I agree with the
+                                                <a onClick={() => handleLinkClick('/terms-and-condition')} title="Terms of Service"> terms and conditions</a>
+                                            </label>
+                                        </div>
+                                        <div class="tf-mini-cart-view-checkout">
+                                            <a onClick={() => handleLinkClick('/view-cart')} data-bs-dismiss="modal" class="tf-btn btn-outline radius-3 link w-100 justify-content-center">View full cart</ a>
+                                            <a onClick={() => handleLinkClick('/check-out')} data-bs-dismiss="modal" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Check out</span></ a>
+                                        </div>
                                     </div>
-                                    <div className="tf-mini-cart-view-checkout">
-                                        <a onClick={() => handleLinkClick('/view-cart')} data-bs-dismiss="modal" className="tf-btn btn-outline radius-3 link w-100 justify-content-center">View full cart</a>
-                                        <a onClick={() => handleLinkClick('/check-out')} data-bs-dismiss="modal" className="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Check out</span></a>
-                                    </div>
-                                </div>
-                            </div>
+                                </div> 
+
+
+
+
+                           
+
+
+
                         </div>
                     </div>
                 </div>

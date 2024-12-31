@@ -117,8 +117,8 @@ import axios from 'axios';
 
 // Create Axios instance
 const axiosInstance = axios.create({
- baseURL: 'http://localhost:8000/api', 
-  // baseURL: 'https://api.chibuikeinnocent.tech/api',
+ //baseURL: 'http://localhost:8000/api', 
+  baseURL: 'https://api.chibuikeinnocent.tech/api',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
