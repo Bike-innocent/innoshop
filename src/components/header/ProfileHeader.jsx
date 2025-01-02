@@ -138,7 +138,7 @@ function ProfileHeader() {
             <nav className="box-navigation text-center">
               <ul className="box-nav-ul flex align-items-center justify-content-center gap-40">
                 <li><Link to="/" className="item-link">Home</Link></li>
-                <li><Link to="/shop" className="item-link">Shop</Link></li>
+              
                 <li><Link to="/about-us" className="item-link">About Us</Link></li>
                 <li><Link to="/contact-us" className="item-link">Contact Us</Link></li>
                 <li><Link to="/our-store" className="item-link">Our Store</Link></li>

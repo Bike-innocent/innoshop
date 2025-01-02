@@ -95,7 +95,9 @@ function Header() {
 
           <div className="w-1/3">
             <ul className="nav-icon flex justify-content-end align-items-center gap-20">
-              <li className="nav-search">
+
+
+              <li className="nav-account ">
                 <button
                   onClick={toggleSearchOffcanvas}
                   data-bs-toggle="offcanvas"
@@ -105,6 +107,8 @@ function Header() {
                   <FiSearch className="text-xl" />
                 </button>
               </li>
+
+
               <li className="nav-account">
                 <Link to="/account/orders" className="nav-icon-item">
                   <FiUser className="text-xl" />

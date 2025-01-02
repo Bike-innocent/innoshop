@@ -30,7 +30,6 @@ import Register from './pages/Auth/Register.jsx';
 import Account from './pages/account/Account.jsx';
 import Orders from './pages/account/Orders.jsx';
 import OffCanvasComponent from './pages/OffCanvasComponent.jsx';
-import Address from './pages/account/Address.jsx';
 import ForgetPassword from './pages/auth/ForgetPassword.jsx';
 import Products from './pages/Products.jsx';
 import ProductDetails from './pages/product/product-details/ProductDetials.jsx';
@@ -49,6 +48,8 @@ import AllUser from './pages/all-user/AllUser.jsx';
 import UserAddress from './pages/all-user/UserAddress.jsx';
 import AccountLayout from './layouts/AccountLayout.jsx';
 import RequireAuth from './contexts/RequireAuth.jsx';
+import Address from './pages/account/address/Address.jsx';
+import CreateAddress from './pages/account/address/CreateAddress.jsx';
 
 const router = createBrowserRouter([
 
@@ -123,6 +124,7 @@ const router = createBrowserRouter([
       { path: '', element: <Account /> },
       { path: 'orders', element: <Orders /> },
       { path: 'address', element: <Address /> },
+      { path: 'create-address', element: <CreateAddress /> },
 
     ],
   },
