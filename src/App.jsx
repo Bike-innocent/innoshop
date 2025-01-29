@@ -50,6 +50,7 @@ import AccountLayout from './layouts/AccountLayout.jsx';
 import RequireAuth from './contexts/RequireAuth.jsx';
 import Address from './pages/account/address/Address.jsx';
 import CreateAddress from './pages/account/address/CreateAddress.jsx';
+import EditAddress from './pages/account/address/EditAddress.jsx';
 
 const router = createBrowserRouter([
 
@@ -125,6 +126,7 @@ const router = createBrowserRouter([
       { path: 'orders', element: <Orders /> },
       { path: 'address', element: <Address /> },
       { path: 'create-address', element: <CreateAddress /> },
+      { path: 'edit-address/:id', element: <EditAddress /> },
 
     ],
   },
